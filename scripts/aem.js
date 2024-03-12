@@ -384,7 +384,7 @@ function decorateButtons(element) {
         if (
           up.childNodes.length === 1
           && up.tagName === 'EM'
-          && twoup.childNodes.length === 1 
+          && twoup.childNodes.length === 1
           && (twoup.tagName === 'P' || twoup.tagName === 'DIV')
         ) {
           a.className = 'button secondary';
