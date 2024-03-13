@@ -1,31 +1,31 @@
 @font-face {
-  font-family: "Clarika Grotesque";
+  font-family: "Clarika Grotesque Light";
   font-weight: 300;
-  src: url("../fonts/ClarikaGrotesqueLight/ClarikaGrotesqueLight.woff2") format("woff2"),url("../fonts/ClarikaGrotesqueLight/ClarikaGrotesqueLight.woff") format("woff")
+  src: url("../fonts/ClarikaGrotesqueLight.woff2") format("woff2"),url("../fonts/ClarikaGrotesqueLight.woff") format("woff")
 }
 
 @font-face {
-  font-family: "Clarika Grotesque";
+  font-family: "Clarika Grotesque DemiBoldold";
   font-weight: 600;
-  src: url("../fonts/ClarikaGrotesqueDemiBold/ClarikaGrotesqueDemiBold.woff2") format("woff2"),url("../fonts/ClarikaGrotesqueDemiBold/ClarikaGrotesqueDemiBold.woff") format("woff")
+  src: url("../fonts/ClarikaGrotesqueDemiBold.woff2") format("woff2"),url("../fonts/ClarikaGrotesqueDemiBold.woff") format("woff")
 }
 
 @font-face {
-  font-family: "Clarika Grotesque";
+  font-family: "Clarika Grotesque light Italic";
   font-style: italic;
   font-weight: 300;
-  src: url("../fonts/ClarikaGrotesqueLightItalic/ClarikaGrotesqueLightItalic.woff2") format("woff2"),url("../fonts/ClarikaGrotesqueLightItalic/ClarikaGrotesqueLightItalic.woff") format("woff")
+  src: url("../fonts/ClarikaGrotesqueLightItalic.woff2") format("woff2"),url("../fonts/ClarikaGrotesqueLightItalic.woff") format("woff")
 }
 
 @font-face {
-  font-family: "Clarika Geometric";
+  font-family: "Clarika Geometric DemiBold";
   font-weight: 600;
-  src: url("../fonts/ClarikaGeometricDemiBold/ClarikaGeometricDemiBold.woff2") format("woff2"),url("../fonts/ClarikaGeometricDemiBold/ClarikaGeometricDemiBold.woff") format("woff")
+  src: url("../fonts/ClarikaGeometricDemiBold.woff2") format("woff2"),url("../fonts/ClarikaGeometricDemiBold.woff") format("woff")
 }
 
 @font-face {
-  font-family: "Clarika Geometric";
+  font-family: "Clarika Geometric DemiBold Italic";
   font-style: italic;
   font-weight: 600;
-  src: url("../fonts/ClarikaGeometricDemiBoldItalic/ClarikaGeometricDemiBoldItalic.woff2") format("woff2"),url("../fonts/ClarikaGeometricDemiBoldItalic/ClarikaGeometricDemiBoldItalic.woff") format("woff")
+  src: url("../fonts/ClarikaGeometricDemiBoldItalic.woff2") format("woff2"),url("../fonts/ClarikaGeometricDemiBoldItalic.woff") format("woff")
 }
