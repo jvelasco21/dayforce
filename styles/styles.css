@@ -10,32 +10,53 @@
  * governing permissions and limitations under the License.
  */
 
-:root {
-  /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: white;
+ :root {
+  /* ---------- colors ---------- */
+
   --light-color: #eee;
-  --dark-color: #ccc;
-  --text-color: black;
+  --white: 255 255 255;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  /* icon, */
+  --light-blue: 68 189 239;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 16px;
+  /* surface-background, */
+  --blue: 48 103 219;
+  --blue-medium: 24 60 136;
+
+  /* button-primary-hover */
+  --blue-dark: 8 20 45;
+
+  /* button-primary (dark), */
+  --blue-darkest: 16 40 91;
+  --link-color: 48 102 219;
+
+  /* ---------- typography colors ---------- */
+  --typography-default: 255 255 255;
+  --typography-emphasis: 68 189 239;
+  --typography-secondary-emphasis: 89 35 170;
+
+  /* ---------- opacities ---------- */
+  --opacity-full: 1;
+  --opacity-semi: .08;
+  --opacity-light: 0.1;
+
+  /* ---------- fonts ---------- */
+  --body-font-family: "Clarika Grotesque Light", ui-sans-serif, system-ui, arial;
+  --heading-font-family: "Clarika Geometric DemiBold", ui-sans-serif, system-ui, arial;
+
+  /* font weight */
+  --font-light: 300;
+  --font-semibold: 600;
+  --font-bold: 700;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
-  --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-xxl: 64px; /* h1 */
+  --heading-font-size-xl: 40px; /* h2 */
+  --heading-font-size-l: 32px; /* h3 */
+  --heading-font-size-m: 24px; /* h4 */
+  --heading-font-size-sm: 20px; /* h5 */
+  --heading-font-size-s: 18px; /* h5 */
+  --heading-font-size-xs: 14px; /* h6 */
 
   /* nav height */
   --nav-height: 64px;
@@ -45,27 +66,16 @@
   font-family: roboto-fallback;
   size-adjust: 100.06%;
   ascent-override: 95%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
-  :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
-  }
+  src: local('arial');
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: 16px;
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: var(--blue-dark);
+  background-color: var(--white);
   display: none;
 }
 
@@ -101,7 +111,7 @@ p, dl, ol, ul, pre, blockquote {
 
 code, pre {
   font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
+  font-size: 14px;
 }
 
 code {
@@ -120,15 +130,21 @@ main pre {
   white-space: pre;
 }
 
+/* lists */
+li {
+  list-style: none;
+}
+
 /* links */
 a:any-link {
-  color: var(--link-color);
   text-decoration: none;
+  transition-duration: 15s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
 }
 
 a:hover {
   text-decoration: underline;
-  color: var(--link-hover-color);
+  color: var(--link-color);
 }
 
 /* buttons */
@@ -143,7 +159,7 @@ a.button:any-link, button {
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
-  color: var(--background-color);
+  color: var(--white);
   background-color: var(--link-color);
   margin: 16px 0;
   white-space: nowrap;
@@ -153,7 +169,7 @@ a.button:any-link, button {
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: var(--link-color);
   cursor: pointer;
 }
 
@@ -162,10 +178,38 @@ button:disabled, button:disabled:hover {
   cursor: unset;
 }
 
+/* BUTTON PRIMARY */
+a.button.primary, button.primary {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 8px;
+  line-height: 1.5rem;
+  padding: 1rem 1.5rem;
+  word-break: break-word;
+  font-size: var(--heading-font-size-s);
+  font-weight: 600;
+  transition-duration: .15s;
+  opacity: 1;
+  gap: 0.5rem;
+}
+
+/* BUTTON SECONDARY */
 a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
+  background-color: transparent;
+  border-radius: 8px;
+  line-height: 1.5rem;
+  padding: 1rem 1.5rem;
+  word-break: break-word;
+  font-size: var(--heading-font-size-s);
+  transition-duration: .15s;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  opacity: 1;
+  color: rgb(var(--typography-on-button-primary)/var(--tw-text-opacity));
+  gap: 0.5rem;
+}
+
+a.button.secondary:active, button.secondary:active {
+  opacity: var(--tw-text-opacity);
 }
 
 main img {
@@ -176,8 +220,6 @@ main img {
 
 .icon {
   display: inline-block;
-  height: 24px;
-  width: 24px;
 }
 
 .icon img {
@@ -194,6 +236,10 @@ main .section {
   main .section {
     padding: 64px 32px;
   }
+}
+
+footer .section {
+  padding: 5rem;
 }
 
 @media (width >= 900px) {
