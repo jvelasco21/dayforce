@@ -1,3 +1,4 @@
+/* ORIGINAL FRAMEWORK START */
 .tabs .tabs-list {
   display: flex;
   gap: 8px;
@@ -45,11 +46,14 @@
   display: none;
 }
 
+/* ORIGINAL FRAMEWORK END */
+
 .stand-for-tabs {
   padding: 5rem !important;
   margin: 0 auto;
   max-width: 80rem;
   width: 100%;
+  color: rgb(var(--blue-dark));
 
   > div {
     margin: 0;
@@ -97,6 +101,7 @@
         flex-direction: column;
         background-color: transparent;
         line-height: 24px;
+        color: rgb(var(--blue-dark));
         padding: 1.5rem 2rem;
         border: 1px solid rgb(191 195 195);
         border-radius: 0.5rem;
