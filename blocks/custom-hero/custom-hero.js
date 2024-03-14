@@ -10,9 +10,18 @@ export default function decorate(block) {
   tablist.prepend(block);
   button.textContent = activeTab;
 
+  function animateDropdown() {
+    tablist.classList.toggle('active');
+  }
+
+  button.addEventListener('click', () => {
+    animateDropdown();
+  });
+
   [...tablist.children].forEach((tab) => {
     tab.addEventListener('click', () => {
       button.textContent = tab.textContent;
+      animateDropdown();
     });
   });
 }
