@@ -81,6 +81,19 @@
     gap: 0;
     border-radius: 16px;
     box-shadow: rgba(0 0 0 / 0%) 0 0 0 0, rgba(0 0 0 / 0%) 0 0 0 0, rgba(0 0 0 / 15%) 0 -4px 8px 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -3%) scale(.9);
+    opacity: 0;
+    transition-duration: .3s;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transform-origin: top center;
+}
+
+.homepage-hero .tabs-list.active {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
 }
 
 .homepage-hero .tabs-list button {
@@ -90,6 +103,7 @@
     background-color: transparent;
     padding: .5rem 1rem .5rem 3rem;
     line-height: 36px;
+    position: relative;
 }
 
 .homepage-hero .tabs .tabs-list button:hover {
@@ -99,4 +113,22 @@
 .homepage-hero .tabs-list button[aria-selected="true"] {
     color: rgb(var(--blue));
     text-decoration: underline;
+}
+
+.homepage-hero .tabs .tabs-list button .icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    opacity: 0;
+    filter: invert(38%) sepia(71%) saturate(3716%) hue-rotate(211deg) brightness(89%) contrast(92%);
+}
+
+.homepage-hero .tabs .tabs-list button .icon img {
+    display: block;
+}
+
+.homepage-hero .tabs-list button[aria-selected="true"] .icon {
+    opacity: 1;
 }
