@@ -1,0 +1,10 @@
+.homepage-hero .default-content-wrapper {
+    text-align: center;
+}
+
+.homepage-hero .default-content-wrapper p:not(.button-container) {
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(var(--white));
+    font-family: var(--heading-font-family);
+}

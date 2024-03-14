@@ -244,7 +244,7 @@ footer .section {
 
 @media (width >= 900px) {
   .section > div {
-    max-width: 1200px;
+    max-width: 80rem;
     margin: auto;
   }
 }
@@ -253,4 +253,15 @@ footer .section {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+}
+
+/* hero section */
+main .section.homepage-hero {
+  padding: 4rem 5rem;
+  background-color: rgb(var(--blue));
+}
+
+main .section.homepage-hero * {
+  margin-top: 0;
+  margin-bottom: 0;
 }
