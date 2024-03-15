@@ -37,6 +37,7 @@
     display: block;
     line-height: 60px;
     margin: 0;
+    cursor: pointer;
 }
 
 .homepage-hero .default-content-wrapper .icon {
@@ -135,10 +136,22 @@
     opacity: 1;
 }
 
-.homepage-hero .tabs-panel {
+.homepage-hero .tabs .tabs-panel {
     margin: 0;
     padding: 5rem 0 0;
     border: 0;
+    opacity: 1;
+    transition: opacity 1s, visibility 1s;
+    visibility: visible;
+    max-height: 50rem;
+}
+
+.homepage-hero .tabs .tabs-panel[aria-hidden="true"] {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    display: block;
+    padding: 0;
 }
 
 /* stylelint-disable no-descending-specificity */
