@@ -1,4 +1,4 @@
-/* ORIGINAL FRAMEWORK START */
+/* ORIGINAL BOILERPLATE START */
 .tabs .tabs-list {
   display: flex;
   gap: 8px;
@@ -46,7 +46,7 @@
   display: none;
 }
 
-/* ORIGINAL FRAMEWORK END */
+/* ORIGINAL BOILERPLATE END */
 
 .stand-for-tabs {
   padding: 5rem !important;
