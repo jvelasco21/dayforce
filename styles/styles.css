@@ -14,7 +14,12 @@
   /* ---------- colors ---------- */
 
   --light-color: #eee;
+
+  /* typography-default */
   --white: 255 255 255;
+
+  /* button-tertiary-hover, */
+  --white-hover: 216 219 219;
 
   /* icon, */
   --light-blue: 68 189 239;
@@ -26,7 +31,7 @@
   /* button-primary-hover */
   --blue-dark: 8 20 45;
 
-  /* button-primary (dark), */
+  /* button-primary (dark), button-secondary-hover, */
   --blue-darkest: 16 40 91;
   --link-color: 48 102 219;
 
@@ -161,7 +166,8 @@ a.button:any-link, button {
   cursor: pointer;
   color: var(--white);
   background-color: var(--link-color);
-  margin: 16px 0;
+  
+  /* margin: 16px 0; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -186,6 +192,7 @@ a.button.primary, button.primary {
   line-height: 1.5rem;
   padding: 1rem 1.5rem;
   word-break: break-word;
+  font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-s);
   font-weight: 600;
   transition-duration: .15s;
@@ -200,6 +207,7 @@ a.button.secondary, button.secondary {
   line-height: 1.5rem;
   padding: 1rem 1.5rem;
   word-break: break-word;
+  font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-s);
   transition-duration: .15s;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -229,17 +237,17 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  /* padding: 64px 16px; */
+
+  /* interferring with footer */
 }
 
 @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
-  }
-}
+    /* padding: 64px 32px; */
 
-footer .section {
-  padding: 5rem;
+    /* interferring with footer */
+  }
 }
 
 @media (width >= 900px) {
