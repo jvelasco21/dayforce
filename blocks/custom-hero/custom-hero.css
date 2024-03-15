@@ -32,7 +32,7 @@
     box-shadow: none;
     font-size: 40px;
     font-weight: 700;
-    padding: 0 57px 0 0;
+    padding: 0 37px 0 0;
     width: 100%;
     display: block;
     line-height: 60px;
@@ -44,7 +44,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 0;
+    right: -5px;
 }
 
 .homepage-hero .default-content-wrapper .icon img {
@@ -86,14 +86,16 @@
     transform: translate(-50%, -3%) scale(.9);
     opacity: 0;
     transition-duration: .3s;
-    transition-property: transform, opacity;
+    transition-property: transform, opacity, visibility;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transform-origin: top center;
+    visibility: hidden;
 }
 
 .homepage-hero .tabs-list.active {
     opacity: 1;
     transform: translate(-50%, 0) scale(1);
+    visibility: visible;
 }
 
 .homepage-hero .tabs-list button {
@@ -131,4 +133,57 @@
 
 .homepage-hero .tabs-list button[aria-selected="true"] .icon {
     opacity: 1;
+}
+
+.homepage-hero .tabs-panel {
+    margin: 5rem 0 0;
+    padding: 0;
+    border: 0;
+}
+
+/* stylelint-disable no-descending-specificity */
+.homepage-hero .tabs-panel p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 24px;
+    color: rgb(var(--white));
+    line-height: 1.5;
+}
+/* stylelint-enable no-descending-specificity */
+
+.homepage-hero .tabs-panel table,
+.homepage-hero .tabs-panel tbody {
+    display: block;
+}
+
+.homepage-hero .tabs-panel tr {
+    display: flex;
+    gap: 7.75rem;
+}
+
+.homepage-hero .tabs-panel td {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.homepage-hero .tabs-panel h1 {
+    font-size: 64px;
+    color: rgb(var(--white));
+    line-height: 1.15;
+    margin: 0 0 1.5rem;
+}
+
+/* stylelint-disable no-descending-specificity */
+.homepage-hero .tabs-panel img {
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    display: block;
+}
+/* stylelint-enable no-descending-specificity */
+
+.homepage-hero .tabs-panel#tabpanel-100-1-000-employees img {
+    border-radius: 40px 40px 0;
 }

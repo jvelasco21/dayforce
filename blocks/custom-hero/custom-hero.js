@@ -20,8 +20,10 @@ export default function decorate(block) {
 
   [...tablist.children].forEach((tab) => {
     tab.addEventListener('click', () => {
-      button.textContent = tab.textContent;
-      animateDropdown();
+      if (tab.classList.contains('tabs-tab')) {
+        button.textContent = tab.textContent;
+        animateDropdown();
+      }
     });
   });
 }
