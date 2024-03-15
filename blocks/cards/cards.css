@@ -29,3 +29,115 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+.whats-new-cards {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem !important;
+  margin: auto;
+  width: 100%;
+  max-width: 80rem;
+  gap: 2.5rem;
+  color: rgb(var(--blue-dark));
+
+  > div {
+    margin: 0;
+
+    h2 {
+      margin: 0;
+      margin-block: 0;
+      line-height: 46px;
+      font-weight: 700;
+    }
+  }
+
+  .cards.block {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      min-height: 500px;
+      height: 100%;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        gap: 1.5rem;
+
+        .cards-card-body {
+          display: flex;
+          flex-direction: column;
+          margin: 0;
+          gap: 1.5rem;
+          height: 100%;
+          font-family: var(--heading-font-family);
+          font-size: var(--heading-font-size-s) !important;
+          font-weight: 700;
+
+          p {
+            margin: 0;
+            /* font-family: var(--heading-font-family);
+            font-weight: 700; */
+            
+            picture {
+              img {
+                border-radius: 0.25rem;
+                overflow: hidden;
+                width: 100%;
+                max-height: 13rem;
+                aspect-ratio: 16/9;
+              }
+            }
+          }
+        }
+        .cards-card-body:first-child {
+          p:last-child {
+            height: 204px;
+          }
+        }
+
+        .cards-card-body:last-child {
+          justify-content: space-between;
+          p:first-child {
+            font-size: var(--heading-font-size-m) !important;
+            font-weight: 700;
+            line-height: 1.25;
+            transition-duration: 3s;
+            gap: 1.5rem;
+          }
+        }
+      }
+
+      li:nth-child(1) {
+        background-color: rgb(221 230 249);
+        justify-content: space-between;
+
+        .cards-card-body:first-child {
+          gap: 0;
+          p:first-child {
+            padding-bottom: 5rem;
+          }
+
+          p:last-child {
+            font-size: var(--heading-font-size-l) !important;
+            line-height: 40px;
+          }
+        }
+
+        .cards-card-body:last-child {
+          justify-content: flex-end;
+        }
+      }
+
+      li:nth-child(2) {
+        background-color: rgb(244 240 255);
+      }
+
+      li:nth-child(3) {
+        background-color: rgb(224 255 244);
+      }
+    }
+  }
+}
