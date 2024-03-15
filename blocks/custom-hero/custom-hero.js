@@ -28,8 +28,8 @@ export default function decorate(block) {
     });
   });
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
       entry.target.classList.toggle('scrolled', !entry.isIntersecting);
     });
   });
