@@ -267,9 +267,6 @@ main .section.highlight {
 main .section.homepage-hero {
   padding: 4rem 5rem;
   background-color: rgb(var(--blue));
-}
-
-main .section.homepage-hero * {
-  margin-top: 0;
-  margin-bottom: 0;
+  min-height: 900px;
+  box-sizing: border-box;
 }
