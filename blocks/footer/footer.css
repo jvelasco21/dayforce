@@ -139,6 +139,76 @@ footer .footer-middle-bottom-columns > div {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+
+footer .footer-bottom > div {
+  margin: 0 auto;
+  width: 100%;
+  height: fit-content;
+  max-width: 80rem;
+}
+
+footer .footer-middle-bottom-columns > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+footer .footer-middle-bottom-columns div .signup-form form {
+  display: flex;
+  grid-column: span 6 / span 6 ;
+}
+
+footer .footer-middle-bottom-columns div .signup-form form .text-wrapper {
+  display: flex;
+  align-items: stretch;
+  flex-grow: 4;
+  padding: 0;
+}
+
+footer .footer-middle-bottom-columns div .signup-form form .submit-wrapper {
+  display: flex;
+  padding: 0;
+}
+
+footer .footer-middle-bottom-columns div .signup-form form .submit-wrapper .button {
+  background-color: rgb(var(--blue-darkest));
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0 !important;
+  transition: .15s background-color cubic-bezier(.4,0,.2,1);
+}
+
+footer .footer-middle-bottom-columns div .signup-form form input {
+  display: flex;
+  background-color: rgb(var(--white));
+  min-width: 100%;
+  max-width: 100%;
+  color: rgb(var(--blue-dark));
+  opacity: var(--opacity-full);
+  font-family: var(--body-font-family);
+  padding: .75rem 1rem;
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: transparent;
+  line-height: 24px;
+  border-radius: 8px 0 0 8px !important;
+  overflow: hidden;
+}
+
+footer .footer-middle-bottom-columns div .signup-form form input:focus {
+  outline: none;
+}
+
+footer .footer-middle-bottom-columns div .signup-form form input::placeholder {
+  opacity: 1;
+}
+
+footer .footer-middle-bottom-columns div .signup-form form label {
+  display: none;
+}
     
 footer .footer-middle-bottom-columns div:has(h4) h4 {
   line-height: 36px;
@@ -147,8 +217,9 @@ footer .footer-middle-bottom-columns div:has(h4) h4 {
 
 footer .footer-middle-bottom-columns div:has(.icon) {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
+  align-items: start;
   gap: 1rem;
 }
 
@@ -162,15 +233,16 @@ footer .footer-bottom {
   padding: 0 5rem;
 }
 
-footer .footer-bottom .footer-bottom-columns > div {
-  margin: auto;
-  width: 100%;
-  max-width: 80rem;
+footer .footer-bottom-columns {
+  padding: 1.5rem 0;
+  line-height: 2rem;
+  gap: 0.5rem;
 }
 
 footer .footer-bottom .footer-bottom-columns div ul {
   display: flex;
   padding: 0;
+  margin-block: 0;
   gap: 1.5rem;
 }
   
