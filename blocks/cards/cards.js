@@ -13,7 +13,7 @@ export default function decorate(block) {
     ul.append(li);
   });
   ul.querySelectorAll('img').forEach((img) => {
-    if(!img.src.endsWith('.svg')) {
+    if (!img.src.endsWith('.svg')) {
       img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
     }
   });
