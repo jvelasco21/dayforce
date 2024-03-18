@@ -41,7 +41,6 @@
   width: 100%;
   max-width: 80rem;
   gap: 2.5rem;
-  color: rgb(var(--blue-dark));
 }
 
 .whats-new-cards > div {
@@ -63,6 +62,13 @@
   height: 100%;
 }
 
+/* IF ANCHOR-CARD */
+.whats-new-cards .cards.block ul a {
+  display: flex;
+  color: rgb(var(--blue-dark));
+  text-decoration: none;
+}
+
 .whats-new-cards .cards.block ul li {
   display: flex;
   flex-direction: column;
@@ -75,51 +81,26 @@
   cursor: pointer;
 }
 
-.whats-new-cards .cards.block ul li .icon-rightarrowblue {
-  margin-left: .5rem;
-}
-    
-.whats-new-cards .cards.block ul li .icon-rightarrowblue img {
-  margin-top: -3px;
-}
-
-.whats-new-cards .cards.block ul li .cards-card-body p picture img  {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: inherit;
-  transition: .3s transform cubic-bezier(.4,0,.2,1);
-}
-
-.whats-new-cards .cards.block ul li:hover .icon-rightarrowblue img {
-  filter: brightness(0) saturate(100%) invert(23%) sepia(11%) saturate(7026%) hue-rotate(195deg) brightness(95%) contrast(102%);
-}
-
 .whats-new-cards .cards.block ul li .cards-card-body {
   display: flex;
   flex-direction: column;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  height: 100%;
   margin: 0;
   gap: 1.5rem;
-  height: 100%;
-  font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-s) !important;
-  font-weight: 700;
 }
 
 .whats-new-cards .cards.block ul li .cards-card-body p {
   margin: 0;
 }
 
-.whats-new-cards .cards.block ul li:nth-child(1) .icon img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
+/* ---------- FIRST COLUMN: SUBTITLE AND (MAYBE) IMAGE ---------- */
+.whats-new-cards .cards.block ul li .cards-card-body:first-child {
+  font-size: var(--heading-font-size-s) !important;
 }
 
-.whats-new-cards .cards.block ul li:hover .cards-card-body p picture img {
-  transform: scale(1.1);
-}
-
+/* IF IMAGE */
 .whats-new-cards .cards.block ul li .cards-card-body:first-child p:last-child {
   border-radius: 4px;
   max-height: 13rem;
@@ -127,74 +108,84 @@
   overflow: hidden;
 }
 
-.whats-new-cards .cards.block ul li .cards-card-body:last-child {
-          justify-content: space-between;
+.whats-new-cards .cards.block ul li .cards-card-body:first-child picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: inherit;
+  transition: .3s transform cubic-bezier(.4,0,.2,1);
 }
 
+/* ---------- THIRD COLUMN: ACTION ITEM ICON ---------- */
 .whats-new-cards .cards.block ul li .cards-card-body:last-child .icon img {
+  margin-top: -3px;
   vertical-align: middle;
 }
-          
-.whats-new-cards .cards.block ul li .cards-card-body:last-child p:first-child {
+
+.whats-new-cards .cards.block ul li:hover .cards-card-body:first-child picture img {
+  transform: scale(1.1);
+}
+
+/* ---------- THIRD COLUMN: ACTION ITEM ---------- */
+.whats-new-cards .cards.block ul li .cards-card-body:last-child {
+  justify-content: flex-end;
+  color: rgb(var(--blue));
+  font-size: var(--heading-font-size-s) !important;
+}
+
+/* ---------- SECOND COLUMN: MAIN CONTENT ---------- */
+.whats-new-cards .cards.block ul li .cards-card-body:not(:first-child, :last-child) {
   font-size: var(--heading-font-size-m);
-  font-weight: 700;
   line-height: 1.25;
   text-decoration: underline transparent;
   transition: .3s text-decoration-color cubic-bezier(.4,0,.2,1);
 }
 
-.whats-new-cards .cards.block ul li .cards-card-body:last-child p:last-child {
-  color: rgb(var(--blue));
-}
-
-.whats-new-cards .cards.block ul li:hover .cards-card-body:last-child p:first-child {
+.whats-new-cards .cards.block ul li:hover .cards-card-body:not(:first-child, :last-child) {
   text-decoration-color: rgb(var(--blue-dark));
 }
 
-.whats-new-cards .cards.block ul li:hover .cards-card-body:last-child p:last-child {
+/* ---------- THIRD COLUMN: ACTION ITEM, (MAYBE) ICON, AND (MAYBE) CARD ANCHOR TAG ---------- */
+.whats-new-cards .cards.block ul li:hover .cards-card-body:last-child {
   color: rgb(var(--blue-medium));
 }
 
-.whats-new-cards .cards.block ul li:nth-child(1) {
+/* IF ICON */
+.whats-new-cards .cards.block ul li .cards-card-body:last-child .icon {
+  margin-left: .5rem;
+}
+
+.whats-new-cards .cards.block ul li:hover .cards-card-body:last-child .icon img {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(11%) saturate(7026%) hue-rotate(195deg) brightness(95%) contrast(102%);
+}
+
+/* IF ANCHOR TAG */
+.whats-new-cards .cards.block ul li .cards-card-body:last-child p:last-child {
+  display: none;
+}
+
+/* CARD COLORS */
+.whats-new-cards .cards.block ul a:nth-child(1) li {
   background-color: rgb(221 230 249);
-  justify-content: space-between;
 }
 
-.whats-new-cards .cards.block ul li:nth-child(1) .cards-card-body:first-child {
-  gap: 0;
+.whats-new-cards .cards.block ul a:nth-child(2) li {
+  background-color: rgb(244 240 255);
 }
 
-.whats-new-cards .cards.block ul li:nth-child(1) .cards-card-body:first-child p:first-child {
-  padding-bottom: 5rem;
+.whats-new-cards .cards.block ul a:nth-child(3) li {
+  background-color: rgb(224 255 244);
 }
 
-.whats-new-cards .cards.block ul li:nth-child(1) .cards-card-body:first-child p:last-child {
+/* SPECIAL CASE: CALL-OUT CARD */
+.call-out .cards.block ul a:nth-child(1) li .cards-card-body:not(:first-child, :last-child) {
   font-size: var(--heading-font-size-l);
   line-height: 40px;
+  margin-top: -75px;
   text-decoration: solid underline transparent;
   transition: .3s text-decoration cubic-bezier(.4,0,.2,1);
 }
 
-.whats-new-cards .cards.block ul li:nth-child(1):hover .cards-card-body:first-child p:last-child {
+.call-out .cards.block ul a:nth-child(1) li:hover .cards-card-body:not(:first-child, :last-child) {
   text-decoration-color: rgb(var(--blue-dark));
-}
-
-.whats-new-cards .cards.block ul li:nth-child(1) .cards-card-body:last-child {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-  gap: 0;
-  color: rgb(var(--blue));
-}
-
-.whats-new-cards .cards.block ul li:nth-child(1):hover .cards-card-body:last-child {
-  color: rgb(var(--blue-medium));
-}
-
-.whats-new-cards .cards.block ul li:nth-child(2) {
-  background-color: rgb(244 240 255);
-}
-
-.whats-new-cards .cards.block ul li:nth-child(3) {
-  background-color: rgb(224 255 244);
 }
