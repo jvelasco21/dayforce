@@ -169,8 +169,8 @@
   background-color: rgb(224 255 244);
 }
 
-/* SPECIAL CASE: ANNOUNCEMENT CARD */
-.whats-new-cards.announcement .cards.block ul li:nth-child(1) .cards-card-body:not(:first-child):not(:last-child) {
+/* SPECIAL CASE: CALL-OUT CARD */
+.call-out .cards.block ul li:nth-child(1) .cards-card-body:not(:first-child):not(:last-child) {
   font-size: var(--heading-font-size-l);
   line-height: 40px;
   margin-top: -75px;
@@ -178,6 +178,6 @@
   transition: .3s text-decoration cubic-bezier(.4,0,.2,1);
 }
 
-.whats-new-cards.announcement .cards.block ul li:nth-child(1):hover .cards-card-body:not(:first-child):not(:last-child) {
+.call-out .cards.block ul li:nth-child(1):hover .cards-card-body:not(:first-child):not(:last-child) {
   text-decoration-color: rgb(var(--blue-dark));
 }
