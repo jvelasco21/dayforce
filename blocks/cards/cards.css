@@ -116,29 +116,36 @@
   transition: .3s transform cubic-bezier(.4,0,.2,1);
 }
 
+/* ---------- THIRD COLUMN: ACTION ITEM ICON ---------- */
+.whats-new-cards .cards.block ul li .cards-card-body:last-child .icon img {
+  margin-top: -3px;
+  vertical-align: middle;
+}
+
 .whats-new-cards .cards.block ul li:hover .cards-card-body:first-child picture img {
   transform: scale(1.1);
 }
 
-/* ---------- SECOND COLUMN: MAIN CONTENT ---------- */
-.whats-new-cards .cards.block ul li .cards-card-body:not(:first-child):not(:last-child) {
-  font-size: var(--heading-font-size-m);
-  line-height: 1.25;
-  text-decoration: underline transparent;
-  transition: .3s text-decoration-color cubic-bezier(.4,0,.2,1);
-}
-
-.whats-new-cards .cards.block ul li:hover .cards-card-body:not(:first-child):not(:last-child) {
-  text-decoration-color: rgb(var(--blue-dark));
-}
-
-/* ---------- FIRST COLUMN: ACTION ITEM, (MAYBE) ICON, AND (MAYBE) CARD ANCHOR TAG ---------- */
+/* ---------- THIRD COLUMN: ACTION ITEM ---------- */
 .whats-new-cards .cards.block ul li .cards-card-body:last-child {
   justify-content: flex-end;
   color: rgb(var(--blue));
   font-size: var(--heading-font-size-s) !important;
 }
 
+/* ---------- SECOND COLUMN: MAIN CONTENT ---------- */
+.whats-new-cards .cards.block ul li .cards-card-body:not(:first-child, :last-child) {
+  font-size: var(--heading-font-size-m);
+  line-height: 1.25;
+  text-decoration: underline transparent;
+  transition: .3s text-decoration-color cubic-bezier(.4,0,.2,1);
+}
+
+.whats-new-cards .cards.block ul li:hover .cards-card-body:not(:first-child, :last-child) {
+  text-decoration-color: rgb(var(--blue-dark));
+}
+
+/* ---------- THIRD COLUMN: ACTION ITEM, (MAYBE) ICON, AND (MAYBE) CARD ANCHOR TAG ---------- */
 .whats-new-cards .cards.block ul li:hover .cards-card-body:last-child {
   color: rgb(var(--blue-medium));
 }
@@ -146,11 +153,6 @@
 /* IF ICON */
 .whats-new-cards .cards.block ul li .cards-card-body:last-child .icon {
   margin-left: .5rem;
-}
-    
-.whats-new-cards .cards.block ul li .cards-card-body:last-child .icon img {
-  margin-top: -3px;
-  vertical-align: middle;
 }
 
 .whats-new-cards .cards.block ul li:hover .cards-card-body:last-child .icon img {
@@ -176,7 +178,7 @@
 }
 
 /* SPECIAL CASE: CALL-OUT CARD */
-.call-out .cards.block ul a:nth-child(1) li .cards-card-body:not(:first-child):not(:last-child) {
+.call-out .cards.block ul a:nth-child(1) li .cards-card-body:not(:first-child, :last-child) {
   font-size: var(--heading-font-size-l);
   line-height: 40px;
   margin-top: -75px;
@@ -184,6 +186,6 @@
   transition: .3s text-decoration cubic-bezier(.4,0,.2,1);
 }
 
-.call-out .cards.block ul a:nth-child(1) li:hover .cards-card-body:not(:first-child):not(:last-child) {
+.call-out .cards.block ul a:nth-child(1) li:hover .cards-card-body:not(:first-child, :last-child) {
   text-decoration-color: rgb(var(--blue-dark));
 }
