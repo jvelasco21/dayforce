@@ -1,5 +1,26 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
+// Creates and wraps an anchor tag around each tab button
+function createAnchorEl() {
+  const cardsContainer = document.querySelector('.anchor-card');
+  if (cardsContainer) {
+    const cards = cardsContainer.getElementsByTagName('li');
+    if (cards) {
+      for (let i = 0; i < cards.length; i += 1) {
+        const element = cards[i];
+        // Grabs last p tag in card, then anchor tag
+        const link = element.lastElementChild.lastElementChild.lastElementChild;
+        const parent = element.parentNode;
+        const wrapper = document.createElement('a');
+        wrapper.setAttribute('href', link);
+        wrapper.setAttribute('target', '_blank');
+        parent.replaceChild(wrapper, element);
+        wrapper.appendChild(element);
+      }
+    }
+  }
+}
+
 export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
@@ -19,4 +40,6 @@ export default function decorate(block) {
   });
   block.textContent = '';
   block.append(ul);
+  
+  createAnchorEl();
 }
