@@ -41,7 +41,6 @@
   width: 100%;
   max-width: 80rem;
   gap: 2.5rem;
-  color: rgb(var(--blue-dark));
 }
 
 .whats-new-cards > div {
@@ -61,6 +60,13 @@
   width: 100%;
   min-height: 500px;
   height: 100%;
+}
+
+/* IF ANCHOR-CARD */
+.whats-new-cards .cards.block ul a {
+  display: flex;
+  color: rgb(var(--blue-dark));
+  text-decoration: none;
 }
 
 .whats-new-cards .cards.block ul li {
@@ -157,20 +163,20 @@
 }
 
 /* CARD COLORS */
-.whats-new-cards .cards.block ul li:nth-child(1) {
+.whats-new-cards .cards.block ul a:nth-child(1) li {
   background-color: rgb(221 230 249);
 }
 
-.whats-new-cards .cards.block ul li:nth-child(2) {
+.whats-new-cards .cards.block ul a:nth-child(2) li {
   background-color: rgb(244 240 255);
 }
 
-.whats-new-cards .cards.block ul li:nth-child(3) {
+.whats-new-cards .cards.block ul a:nth-child(3) li {
   background-color: rgb(224 255 244);
 }
 
 /* SPECIAL CASE: CALL-OUT CARD */
-.call-out .cards.block ul li:nth-child(1) .cards-card-body:not(:first-child):not(:last-child) {
+.call-out .cards.block ul a:nth-child(1) li .cards-card-body:not(:first-child):not(:last-child) {
   font-size: var(--heading-font-size-l);
   line-height: 40px;
   margin-top: -75px;
@@ -178,6 +184,6 @@
   transition: .3s text-decoration cubic-bezier(.4,0,.2,1);
 }
 
-.call-out .cards.block ul li:nth-child(1):hover .cards-card-body:not(:first-child):not(:last-child) {
+.call-out .cards.block ul a:nth-child(1) li:hover .cards-card-body:not(:first-child):not(:last-child) {
   text-decoration-color: rgb(var(--blue-dark));
 }
