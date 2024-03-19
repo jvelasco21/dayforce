@@ -54,7 +54,7 @@ function removeHoverEvent(tabId, tabsPanel) {
 }
 
 // Event listener for tab mouseenter/mouseleave
-function getTabListId() {
+function getHoverTabListId() {
   const tabs = document.querySelector('.hover-tab');
   const tabsList = tabs.querySelector('.tabs-list');
   const tabsPanel = tabs.getElementsByClassName('tabs-panel');
@@ -124,5 +124,5 @@ export default async function decorate(block) {
   block.prepend(tablist);
 
   createAnchorEl();
-  getTabListId();
+  getHoverTabListId();
 }
