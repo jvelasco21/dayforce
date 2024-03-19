@@ -19,7 +19,7 @@ export async function createModal(contentNodes) {
   closeButton.classList.add('close-button');
   closeButton.setAttribute('aria-label', 'Close');
   closeButton.type = 'button';
-  closeButton.innerHTML = '<span class="icon icon-close"></span>';
+  closeButton.innerHTML = '×';
   closeButton.addEventListener('click', () => dialog.close());
   dialog.append(closeButton);
 

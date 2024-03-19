@@ -64,7 +64,7 @@
   --heading-font-size-xs: 14px; /* h6 */
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 165px;
 }
 
 @font-face {
@@ -143,6 +143,8 @@ li {
 /* links */
 a:any-link {
   text-decoration: none;
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
 }
 
 a:hover {

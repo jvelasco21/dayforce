@@ -3,12 +3,8 @@ body.modal-open {
 }
 
 .modal dialog {
-  --dialog-border-radius: 16px;
-
   overscroll-behavior: none;
-  border: 1px solid #ccc;
-  border-radius: var(--dialog-border-radius);
-  width: 100vw;
+  border: 0;
 }
 
 .modal dialog .modal-content {
@@ -19,9 +15,10 @@ body.modal-open {
 
 @media (width >= 600px) {
   .modal dialog {
-    padding: 30px;
-    width: 80vw;
-    max-width: 700px;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
 
   .modal dialog .modal-content {
@@ -30,24 +27,54 @@ body.modal-open {
 }
 
 .modal dialog::backdrop {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: #f9fafb;
 }
 
 .modal .close-button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-family: "Clarika Grotesque Light", ui-sans-serif, system-ui, arial;
+  font-size: 50px;
+  font-weight: 300;
+  height: 50px;
+  justify-content: center;
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
-  height: 100%;
-  max-height: 54px;
-  border-radius: 0 var(--dialog-border-radius) 0 0;
-  background-color: unset;
-  text-overflow: clip;
-  margin: 0;
-  border: none;
-  padding-right: 30px;
+  right: 10px;
+  top: 30px;
+  transform: translateY(-50%);
+  width: 50px;
+  z-index: 9999;
 }
 
 .modal dialog .section {
   padding: 0;
+}
+
+.modal .text-wrapper label {
+  display: none;
+}
+
+.modal .submit-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+}
+
+.modal .form .field-wrapper {
+  padding: 0;
+}
+
+.modal .form .field-wrapper input {
+  height: 78px;
+  line-height: 50px;
+  margin: 0 auto;
+  max-width: 670px;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  padding: 0 40px;
+  color: #3b454f;
+  font-size: 28px;
 }
