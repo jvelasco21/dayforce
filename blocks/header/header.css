@@ -334,3 +334,115 @@ header .breadcrumbs ol li:last-of-type {
     display: block;
   }
 }
+
+/* dayforce header */
+@media (width >= 900px) {
+  header .dayfoce-header .nav-wrapper {
+    position: relative;
+  }
+
+  .dayfoce-header nav#nav {
+    padding: 0;
+    flex-direction: column;
+    max-width: none;
+    height: var(--nav-height);
+  }
+
+  .dayfoce-header nav#nav[aria-expanded="true"] .section {
+    width: 100%;
+  }
+
+  .dayfoce-header nav#nav .icon-dayforce img {
+    filter: invert(30%) sepia(88%) saturate(2498%) hue-rotate(214deg) brightness(91%) contrast(87%);
+    width: 168px;
+  }
+
+  header .dayfoce-header .header-top {
+    height: 40px;
+  }
+
+  header .dayfoce-header .header-bottom {
+    height: 84px;
+    flex-basis: 84px;
+    padding-top: 8px;
+    box-sizing: border-box;
+  }
+
+  .dayfoce-header .header-bottom .columns-wrapper {
+    height: 100%;
+  }
+
+  .dayfoce-header .main-nav {
+    height: 100%;
+  }
+
+  .dayfoce-header .main-nav > div {
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  .dayfoce-header .main-nav .main-nav-column {
+    flex: none;
+  }
+
+  .dayfoce-header nav#nav .main-nav .nav-ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .dayfoce-header nav#nav .main-nav .nav-ul li a {
+    padding: 1.5rem .5rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-family: "Clarika Geometric", ui-sans-serif, system-ui, Arial;
+    font-size: 15px;
+    line-height: 24px;
+    gap: .5rem;
+    transition-property: border-color;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    border-bottom: solid 4px transparent;
+    text-decoration: none;
+  }
+
+  .dayfoce-header nav#nav .nav-ul .icon {
+    display: block;
+  }
+
+  .dayfoce-header nav#nav .nav-ul .icon img {
+    width: 16px;
+    display: block;
+  }
+
+  /* get started button */
+  .dayfoce-header .main-nav > div > div:not(.main-nav-column) {
+    flex: none;
+    margin-left: auto;
+  }
+
+  .dayfoce-header nav#nav .main-nav > div > div:not(.main-nav-column) a {
+    background-color: rgb(var(--blue));
+    color: #fff;
+    padding: .5rem 1rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: 700;
+    font-family: "Clarika Geometric", ui-sans-serif, system-ui, Arial;
+    font-size: 16px;
+  }
+
+  .dayfoce-header nav#nav .main-nav > div > div:not(.main-nav-column) a:hover {
+    background-color: rgb(var(--blue-medium));
+    text-decoration: none;
+  }
+
+  .dayfoce-header nav#nav .main-nav .icon-rightarrow img {
+    width: 24px;
+    filter: invert(98%) sepia(98%) saturate(0%) hue-rotate(317deg) brightness(102%) contrast(103%);
+  }
+}
