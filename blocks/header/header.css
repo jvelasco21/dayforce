@@ -357,8 +357,37 @@ header .breadcrumbs ol li:last-of-type {
     width: 168px;
   }
 
-  header .dayfoce-header .header-top {
+  header .dayfoce-header nav#nav .header-top {
     height: 40px;
+    box-sizing: border-box;
+    flex: unset;
+    padding-top: 1rem;
+  }
+
+  header .dayfoce-header nav#nav .header-top .button {
+    padding: 0;
+    border: 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  header .dayfoce-header nav#nav .utility-links .utility-column-1 .button {
+    background-color: rgb(226 232 240);
+    padding: 1px;
+  }
+
+  .dayfoce-header .utility-links .utility-column-5 .button {
+    gap: 0.25rem;
+  }
+
+  .dayfoce-header .utility-links .utility-column-5 .button .icon-nav-arrow {
+    transform: rotate(0deg);
+    transition: transform .15s ;
+  }
+
+  .dayfoce-header .utility-links .utility-column-5 .button.active .icon-nav-arrow {
+    transform: rotate(180deg);
   }
 
   header .dayfoce-header .header-bottom {
@@ -374,6 +403,25 @@ header .breadcrumbs ol li:last-of-type {
 
   .dayfoce-header .main-nav {
     height: 100%;
+  }
+
+  .dayfoce-header .utility-links > div {
+    justify-content: flex-end;
+    gap: 24px;
+  }
+
+  .dayfoce-header .utility-links .utility-column {
+    flex: none;
+    position: relative;
+  }
+
+  .dayfoce-header .utility-links .icon img {
+    width: 16px;
+    display: block;
+  }
+
+  .dayfoce-header .utility-links .icon:not(.icon-nav-arrow) img {
+    filter: invert(30%) sepia(88%) saturate(2498%) hue-rotate(214deg) brightness(91%) contrast(87%);
   }
 
   .dayfoce-header .main-nav > div {
