@@ -239,3 +239,74 @@
   height: 2.5rem;
   vertical-align: middle;
 }
+
+.dayforce-diff-cards {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem !important;
+  margin: 0 auto;
+  max-width: 80rem;
+  width: 100%;
+  color: rgb(var(--blue-dark));
+  gap: 2.5rem;
+}
+
+.dayforce-diff-cards h2, .dayforce-diff-cards p {
+  margin: 0;
+}
+
+.dayforce-diff-cards > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  gap: 1.5rem;
+}
+
+.dayforce-diff-cards .columns.block > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.dayforce-diff-cards .columns.block > div div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.dayforce-diff-cards .columns.block > div div:first-child p:first-child {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  color: rgb(48 103 219);
+  text-transform: uppercase;
+  line-height: 24px;
+}
+
+.dayforce-diff-cards .columns.block > div div:first-child h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  line-height: 1.15;;
+}
+
+.dayforce-diff-cards .columns.block > div div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.dayforce-diff-cards .columns.block > div div:last-child img {
+  display: block;
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
