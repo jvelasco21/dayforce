@@ -149,10 +149,9 @@ export default async function decorate(block) {
   }
 
   // For marquee carousel, duplicate the slides UL and insert before initial slides UL
-  if (block.classList.contains('marquee')){
+  if (block.classList.contains('marquee')) {
     const clone = slidesWrapper.cloneNode(true);
     const slidesWrapperParent = slidesWrapper.closest('.carousel-slides-container');
     slidesWrapperParent.insertBefore(clone, slidesWrapper);
   }
-
 }
