@@ -28,7 +28,11 @@ export default function decorate(block) {
 
       // header mian nav
       if (col.closest('.main-nav') !== null && col.closest('.main-nav-column-2')) {
-        col.firstElementChild.classList.add('nav-ul');
+        const ul = col.firstElementChild;
+        ul.classList.add('nav-ul');
+        ul.querySelectorAll('li').forEach((item) => {
+          item.classList.add(`main-nav-item-${i + 1}`);
+        });
       }
     });
   });

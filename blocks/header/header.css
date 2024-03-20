@@ -403,6 +403,7 @@ header .breadcrumbs ol li:last-of-type {
 
   .dayfoce-header .main-nav {
     height: 100%;
+    position: relative;
   }
 
   .dayfoce-header .utility-links > div {
