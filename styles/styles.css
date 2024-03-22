@@ -48,6 +48,7 @@
   /* ---------- fonts ---------- */
   --body-font-family: "Clarika Grotesque Light", ui-sans-serif, system-ui, arial;
   --heading-font-family: "Clarika Geometric DemiBold", ui-sans-serif, system-ui, arial;
+  --tab-selected-font-family: "Clarika Grotesque DemiBold", ui-sans-serif, system-ui, arial;
 
   /* font weight */
   --font-light: 300;
