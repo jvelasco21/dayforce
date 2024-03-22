@@ -1,0 +1,277 @@
+/* ORIGINAL BOILERPLATE START */
+.fade-tabs .tabs-list {
+  display: flex;
+  gap: 8px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.fade-tabs .tabs-list button {
+  flex: 0 0 max-content;
+  margin: 0;
+  border: 1px solid var(--dark-color);
+  border-radius: 0;
+  padding: 8px 16px;
+  background-color: var(--light-color);
+  color: initial;
+  font-size: unset;
+  font-weight: bold;
+  line-height: unset;
+  text-align: initial;
+  text-overflow: unset;
+  overflow: unset;
+  white-space: unset;
+  transition: background-color 0.2s;
+}
+
+.fade-tabs .tabs-list button[aria-selected="true"] {
+  border-bottom: 1px solid var(--background-color);
+  background-color: var(--background-color);
+  cursor: initial;
+}
+
+.fade-tabs .tabs-list button[aria-selected="false"]:hover,
+.fade-tabs .tabs-list button[aria-selected="false"]:focus {
+  background-color: var(--dark-color);
+}
+
+.fade-tabs .tabs-panel {
+  margin-top: -1px;
+  padding: 0 16px;
+  border: 1px solid var(--dark-color);
+  overflow: auto;
+}
+
+.fade-tabs .tabs-panel[aria-hidden="true"] {
+  display: none;
+}
+
+.fade-tabs .tabs-panel[hidden="true"] {
+  display: none;
+}
+
+.fade-tabs .tabs-panel[hidden="false"] {
+  display: block;
+}
+
+/* ORIGINAL BOILERPLATE END */
+
+.offer-tabs {
+  padding: 5rem !important;
+  margin: 0 auto;
+  max-width: 80rem;
+  width: 100%;
+  color: rgb(var(--blue-dark));
+}
+
+.offer-tabs > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  gap: 1.5rem;
+}
+
+.offer-tabs .fade-tabs.block {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.offer-tabs .fade-tabs.block .tabs-list {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3 / span 3;
+  width: 100%;
+  position: relative;
+  gap: 0;
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: transparent;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  padding: 0 0 0 1.5rem;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+  gap: 0.5rem;
+
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button[aria-selected="true"] {
+  border-color: rgb(195 195 195);
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button p {
+  font-family: var(--body-font-family);
+  font-weight: 300;
+  color: rgb(var(--blue-dark));
+  margin: 0;
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button[aria-selected="true"] p {
+  font-family: var(--tab-selected-font-family);
+  font-weight: 700;
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button[aria-selected="true"] p:first-child {
+  color: rgb(48 103 219);
+  transition: .15s color cubic-bezier(.4,0,.2,1);
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button p:first-child {
+  padding: 1.5rem 2rem 0 0;
+  line-height: 24px;
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button p:last-child {
+  padding: 0 2rem 1.5rem 0;
+  font-size: var(--heading-font-size-m);
+  line-height: 36px;
+  border: 0;
+  border-bottom-width: 1px;
+  border-top-width: none;
+  border-color: rgb(195 195 195);
+  border-style: solid;
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button[id^="tab-05"] p:last-child {
+  padding-bottom: 3.75rem;
+}
+
+.offer-tabs .fade-tabs.block .tabs-list button[aria-selected="true"][id^="tab-05"] p:last-child {
+  padding-bottom: 1.5rem;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel .button-container .secondary {
+  border-color: rgb(var(--blue-dark)/var(--opacity-full));
+  width: 187.44px;
+  margin-top: 1rem;
+  transition-duration: .15s background-color cubic-bezier(.4,0,.2,1);
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel p {
+  margin: 0;
+  font-size: var(--heading-font-size-m);
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel p:first-child {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  color: rgb(48 103 219);
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel {
+  grid-column: 5 / span 8;
+  position: relative;
+  max-width: 100%;
+  padding: 0;
+  visibility: visible;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel.opacity-0[aria-hidden="false"] {
+  animation-name: fade-out;
+  animation-duration: .3s;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel[aria-hidden="false"] {
+  animation-name: fade-in;
+  animation-duration: .3s;
+  animation-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel .button-container .secondary:hover {
+  background-color: rgb(var(--blue-darkest)/var(--opacity-light));
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel h2 {
+  margin: 0;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel table tr {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5rem;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel table tr td:first-child {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-top: 4rem;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel table tr td:first-child img {
+  object-position: left;
+  object-fit: contain;
+  max-height: 4rem;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel table tr td:last-child img {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel#tabpanel-02-talent table tr td:first-child img {
+  width: auto;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel table tr td:first-child h4 {
+  margin: 0;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel table tr td:first-child p:last-child {
+  font-family: var(--body-font-family);
+  font-size: 1rem;
+  line-height: 24px;
+  margin-top: -1.3rem;
+}
+
+.offer-tabs .fade-tabs.block .tabs-panel table tr td:last-child {
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-end;
+  width: 100%;
+}
