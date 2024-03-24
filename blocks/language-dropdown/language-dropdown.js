@@ -1,6 +1,6 @@
 export default function decorate(block) {
-  let buttonColumn = ''
-  let iconString = ''
+  let buttonColumn = '';
+  let iconString = '';
 
   if (block.closest('.header-top')) {
     buttonColumn = block.closest('.header-top').querySelector('.utility-column-5');
@@ -42,5 +42,4 @@ export default function decorate(block) {
       e.preventDefault();
     });
   });
-
 }
