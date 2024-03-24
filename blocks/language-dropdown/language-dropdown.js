@@ -1,9 +1,22 @@
 export default function decorate(block) {
+  let buttonColumn = ''
+  let iconString = ''
+
+  if (block.closest('.header-top')) {
+    buttonColumn = block.closest('.header-top').querySelector('.utility-column-5');
+    iconString = '.icon-nav-arrow';
+  }
+
+  if (block.closest('.footer-bottom')) {
+    buttonColumn = block.closest('.footer-bottom').querySelector('.button-container');
+    iconString = '.icon-nav-arrow-light';
+  }
+
   const languageWrapper = block.closest('.language-dropdown-wrapper');
-  const langaugeButtonColumn = block.closest('.header-top').querySelector('.utility-column-5');
+  const langaugeButtonColumn = buttonColumn;
   const languageButton = langaugeButtonColumn.querySelector('.button');
   const buttonGlobe = languageButton.querySelector('.icon-globesmall');
-  const buttonArrow = languageButton.querySelector('.icon-nav-arrow');
+  const buttonArrow = languageButton.querySelector(iconString);
   const languageItems = block.querySelectorAll('.language-dropdown li');
   block.querySelector('.language-dropdown li').classList.add('active');
   langaugeButtonColumn.append(languageWrapper);
@@ -29,4 +42,5 @@ export default function decorate(block) {
       e.preventDefault();
     });
   });
+
 }
