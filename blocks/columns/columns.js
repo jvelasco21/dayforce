@@ -34,6 +34,12 @@ export default function decorate(block) {
           item.classList.add(`main-nav-item-${i + 1}`);
         });
       }
+
+      // footer bottom columns
+      if (col.closest('.footer-bottom-columns') !== null) {
+        col.classList.add('footer-column');
+        col.classList.add(`footer-column-${i + 1}`);
+      }
     });
   });
 }
