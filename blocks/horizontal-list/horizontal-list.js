@@ -1,3 +1,25 @@
+function animateDropdown(clone, button) {
+  clone.classList.toggle('active');
+  button.classList.toggle('active');
+}
+
+// Clone and create mobile dropdown
+function mobileDropdown(div) {
+  const parentEl = div.closest('.horizontal-list-container');
+  const mobileParentEl = parentEl.lastChild;
+  mobileParentEl.classList.add('mobile-content-wrapper');
+  const buttonColumn = mobileParentEl.querySelector('.button-container');
+  const button = buttonColumn.querySelector('.button');
+  const clone = div.cloneNode(true);
+  clone.className = 'mobile-dropdown-wrapper';
+  mobileParentEl.append(clone);
+
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    animateDropdown(clone, button);
+  });
+}
+
 export default function decorate(block) {
   const div = document.createElement('div');
   div.className = 'content-wrapper';
@@ -16,4 +38,6 @@ export default function decorate(block) {
   for (let i = pTags.length - 1; i >= 0; i -= 1) {
     pTags[i].remove();
   }
+
+  mobileDropdown(div);
 }
