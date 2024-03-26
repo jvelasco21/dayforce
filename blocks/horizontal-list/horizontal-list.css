@@ -1,0 +1,162 @@
+.horizontal-list-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 0 !important;
+  margin: 0 auto;
+  max-width: 80rem;
+  width: 100%;
+  color: rgb(var(--blue-dark));
+  gap: 1.5rem;
+}
+
+@media screen and (width >= 1024px) {
+  .horizontal-list-container {
+    padding: 2.5rem 2.5rem 0 !important;
+  }
+}
+
+@media screen and (width >= 1440px) {
+  .horizontal-list-container {
+    padding: 5rem 5rem 0 !important;
+  }
+}
+  
+.horizontal-list-container > div h6 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xs);
+  letter-spacing: 2.8px;
+  line-height: 1.15;
+  text-align: center;
+  margin: 0;
+}
+
+.horizontal-list-container .horizontal-list-wrapper {
+  display: none;
+}
+
+@media screen and (width >= 768px) {
+  .horizontal-list-container .horizontal-list-wrapper {
+    display: block;
+  }
+}
+
+.horizontal-list-container .horizontal-list.block .content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 min(-2.5rem, calc( calc(100vw - 0px, 0px) - 1280px)* -1)
+}
+
+.horizontal-list-container .horizontal-list.block .content-wrapper ul {
+  display: flex;
+  padding: 0.5rem;
+  margin: auto;
+  gap: 3rem;
+}
+
+.horizontal-list-container .horizontal-list.block .content-wrapper ul li a {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  color: rgb(var(--blue));
+  border: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  transition: .3s color cubic-bezier(.4,0,.2,1);
+}
+
+.horizontal-list-container .horizontal-list.block .content-wrapper ul li a:hover {
+  color: rgb(var(--blue-medium));
+}
+
+.horizontal-list-container .mobile-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media screen and (width >= 768px) {
+  .horizontal-list-container .mobile-content-wrapper {
+    display: none;
+  }
+}
+
+.horizontal-list-container .mobile-content-wrapper .button-container {
+  margin: 0;
+}
+
+.horizontal-list-container .mobile-content-wrapper .button-container em .secondary {
+  font-size: 16px;
+  padding: .5rem 1.25rem;
+  border: 1px solid rgb(191 195 195);
+  border-radius: 999rem;
+  transition: .3s background-color, opacity cubic-bezier(.4,0,.2,1);
+}
+
+.horizontal-list-container .mobile-content-wrapper .button-container em .secondary:hover {
+  background-color: rgb(var(--blue-darkest)/var(--opacity-light));
+}
+
+.horizontal-list-container .mobile-content-wrapper .button-container em .secondary .icon {
+  width: 1rem;
+  margin-left: .25rem;
+  transform: rotate(0deg);
+  transition: transform .15s;
+}
+
+.horizontal-list-container .mobile-content-wrapper .button-container em .secondary.active .icon {
+  transform: rotate(180deg);
+}
+
+.horizontal-list-container .mobile-content-wrapper .button-container em .secondary .icon img {
+  vertical-align: middle;
+}
+
+.horizontal-list-container .mobile-content-wrapper .mobile-dropdown-wrapper {
+  position: absolute;
+  top: 18px;
+  margin-top: .5rem;
+  z-index: 5;
+  transform: scale(.9);
+  opacity: 0;
+  transition-duration: .3s;
+  transition-property: transform, opacity, visibility;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transform-origin: center center;
+  visibility: hidden;
+}
+
+.horizontal-list-container .mobile-content-wrapper .mobile-dropdown-wrapper.active {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+.horizontal-list-container .mobile-content-wrapper .mobile-dropdown-wrapper ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  box-shadow: rgba(0 0 0 / 0%) 0 0 0 0, rgba(0 0 0 / 0%) 0 0 0 0, rgba(0 0 0 / 6%) 0 -4px 8px 0;
+  padding: 1rem 0;
+  border-radius: 8px;
+}
+
+.horizontal-list-container .mobile-content-wrapper .mobile-dropdown-wrapper ul li {
+  display: flex;
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.horizontal-list-container .mobile-content-wrapper .mobile-dropdown-wrapper ul li a {
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  color: rgb(var(--blue));
+  padding: .5rem 1rem;
+}
+
+.horizontal-list-container .mobile-content-wrapper .mobile-dropdown-wrapper ul li a:hover {
+  text-decoration: underline;
+}

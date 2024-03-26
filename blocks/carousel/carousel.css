@@ -169,73 +169,78 @@
   }
 }
 
-.brands-carousel {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-s);
-  text-align: center;
-  padding: 5rem !important;
-  margin: 0 auto;
-  max-width: 80rem;
-  width: 100%;
-  color: rgb(var(--blue-dark));
-  gap: 2.5rem;
-}
 
-.brands-carousel > div {
-  width: 100%;
-  height: 100%;
-  /* margin: 0; */
-}
-
-.brands-carousel > div p {
-  margin: 0;
-}
-
-.brands-carousel nav,.brands-carousel .carousel-navigation-buttons {
+/* Carousel - Marquee */
+.carousel.marquee .carousel-navigation-buttons, .carousel.marquee nav{
   display: none;
 }
 
-.brands-carousel .carouse.block {
-  display: flex;
-  align-items: center;
-  background-image: rgb(var(--white) / 1);
+.carousel.marquee .carousel-slides-container{
   overflow: hidden;
-  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 32px;
+  margin-top: 30px;
 }
 
-.brands-carousel .carouse.block:before {
-  display: flex;
-  align-items: center;
-  /* background-image: linear-gradient(to left, var(); */
+.carousel.marquee .carousel-slides-container::before, .carousel.marquee .carousel-slides-container::after{
+  content: '';
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 96px;
+  background: linear-gradient(90deg, rgba(255 255 255 / 100%) 0%, rgba(255 255 255 / 0%) 100%);
+}
+
+.carousel.marquee .carousel-slides-container::after{
+  left: auto;
+  right: 0;
+  background: linear-gradient(-90deg, rgba(255 255 255 / 100%) 0%, rgba(255 255 255 / 0%) 100%);
+}
+
+.carousel.marquee .carousel-slides {
   overflow: hidden;
-  white-space: nowrap;
+  width: auto;
+  gap: 32px;
+  animation: scroll-right 30s linear infinite; 
+  flex-shrink: 0;
 }
 
-.brands-carousel .carouse.block .carousel-slides-container {
-  display: flex;
-  flex-wrap: nowrap;
+.carousel.marquee .carousel-slide {
+  width: auto;
+  max-width: 80px;
+  min-height: 0;
+  height: auto;
 }
 
-.brands-carousel .carouse.block:before, .brands-carousel .carouse.block:after {
-  content: "";
+.carousel.marquee .carousel-slide .carousel-slide-image picture {
+  position: relative;
 }
 
-.brands-carousel .carouse.block .carousel-slides-container .carousel-slides {
-  display: flex;
-  width: max-content;
-  animation: to-left 5s linear infinite;
-  animation-duration: 45s;
-  animation-direction: reverse;
-  gap: 2rem;
+.carousel.marquee .carousel-slide .carousel-slide-image picture > img {
+  object-fit: initial;
+  width: auto;
+  height: auto;
 }
 
-@keyframes to-left {
-  from {
-    transform: translateX(0);
+@media (width >= 1024px) {
+  .carousel.marquee .carousel-slide {
+    max-width: 160px;
   }
-  to {
-    transform: translateX(calc(-150px));
+}
+
+
+/* Define animation */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(calc(-100% - 32px)); /* Start position - Duplicated UL starts offset and then resets once scrolled to 0px - 32px is the gap offset between the ULs */
+  }
+
+  100% {
+    transform: translateX(0%); /* End position */
   }
 }

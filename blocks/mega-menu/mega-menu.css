@@ -1,0 +1,31 @@
+.mega-menu-wrapper {
+    position: absolute;
+    left: 0;
+    height: calc(100vh - 100%);
+    width: 100%;
+    display: none;
+}
+
+.mega-menu {
+    transition-duration: .3s;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    background-color: rgb(var(--white));
+    border-radius: 0 0 40px 40px;
+    border: 1px solid rgb(var(--white-hover));
+    overflow: hidden;
+}
+
+.mega-menu > div {
+    display: flex;
+}
+
+.mega-menu .column {
+    padding: 3.5rem 3rem;
+    flex: 1 1 0px;
+}
+
+.mega-menu .column-3 {
+    background-color: rgb(241 242 242);
+    overflow: auto;
+}
