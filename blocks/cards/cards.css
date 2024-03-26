@@ -198,31 +198,31 @@
   max-width: 80rem;
   width: 100%;
   color: rgb(var(--blue-dark));
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
-.rise-above-cards > div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+.rise-above-cards .default-content-wrapper {
   margin: 0;
-  gap: 1.5rem;
 }
 
 .rise-above-cards h2, .rise-above-cards h3, .rise-above-cards p {
   margin: 0;
 }
 
+.rise-above-cards h2 {
+  font-size: var(--heading-font-size-l);
+  margin-bottom: 2.5rem;
+}
+
 .rise-above-cards .cards.block ul {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .rise-above-cards .cards.block ul li {
   display: flex;
   flex-direction: column;
-  grid-column: span 4 / span 4;
+  grid-column: 1 / -1;
   width: 100%;
 }
 
@@ -231,7 +231,11 @@
   flex-direction: column;
   margin: 0;
   padding: 1.5rem;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+.rise-above-cards .cards.block ul li .cards-card-body h3 {
+  font-size: var(--heading-font-size-m);
 }
 
 .rise-above-cards .cards.block ul li .cards-card-body img {
@@ -313,6 +317,18 @@
 }
 
 @media (width >= 768px) {
+  .rise-above-cards h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  .rise-above-cards .cards.block ul li {
+    grid-column: span 3 / span 3;
+  }
+
+  .rise-above-cards .cards.block ul li .cards-card-body h3 {
+    font-size: var(--heading-font-size-l);
+  }
+
   .dayforce-diff-cards .columns.block > div div:first-child p:first-child {
     font-size: var(--heading-font-size-s);
   }
@@ -324,7 +340,19 @@
 
 @media (width >= 1024px) {
   .rise-above-cards {
-    padding: 5rem 2.5rem !important;
+    gap: 2.5rem;
+  }
+  .rise-above-cards h2 {
+    margin-bottom: 0;
+  }
+
+  .rise-above-cards .cards.block ul {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .rise-above-cards .cards.block ul li {
+    grid-column: span 4 / span 4;
   }
 
   .dayforce-diff-cards {
@@ -339,10 +367,6 @@
 }
 
 @media (width >= 1440px) {
-  .rise-above-cards {
-    padding: 5rem !important;
-  }
-
   .dayforce-diff-cards {
     padding: 5rem !important;
   }
