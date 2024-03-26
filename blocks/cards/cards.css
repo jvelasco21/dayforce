@@ -325,7 +325,6 @@
 @media (width >= 1024px) {
   .dayforce-diff-cards {
     padding: 5rem 2.5rem !important;
-    /* display: none; */
   }
 
   .dayforce-diff-cards .columns.block > div {
