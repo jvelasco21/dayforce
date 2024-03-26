@@ -193,7 +193,7 @@
 .rise-above-cards {
   display: flex;
   flex-direction: column;
-  padding: 5rem !important;
+  padding: 3rem 1.5rem !important;
   margin: 0 auto;
   max-width: 80rem;
   width: 100%;
@@ -323,6 +323,10 @@
 }
 
 @media (width >= 1024px) {
+  .rise-above-cards {
+    padding: 5rem 2.5rem !important;
+  }
+
   .dayforce-diff-cards {
     padding: 5rem 2.5rem !important;
   }
@@ -335,6 +339,10 @@
 }
 
 @media (width >= 1440px) {
+  .rise-above-cards {
+    padding: 5rem !important;
+  }
+
   .dayforce-diff-cards {
     padding: 5rem !important;
   }
