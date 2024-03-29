@@ -54,8 +54,8 @@
 
 .stand-for-tabs .tabs.block .tabs-list .tabs-tab p:first-child {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-m);
-  line-height: 36px;
+  font-size: var(--heading-font-size-sm);
+  line-height: 30px;
 }
 
 .stand-for-tabs .tabs.block .tabs-list .tabs-tab p:has(.icon) {
@@ -97,7 +97,7 @@
 }
 
 .stand-for-tabs {
-  padding: 5rem !important;
+  padding: 3rem 1.5rem !important;
   margin: 0 auto;
   max-width: 80rem;
   width: 100%;
@@ -106,7 +106,6 @@
 
 .stand-for-tabs .tabs.block {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -155,4 +154,29 @@
 .stand-for-tabs .tabs.block .tabs-list .tabs-tab:hover {
   cursor: pointer;
   background-color: rgb(218 241 252);
+}
+
+@media (width >= 768px) {
+  .stand-for-tabs .tabs.block .tabs-list .tabs-tab p:first-child {
+    font-size: var(--heading-font-size-m);
+    line-height: 36px;
+  }
+}
+
+@media (width <= 1023px) {
+  .stand-for-tabs .tabs.block .tabs-panel {
+    display: none;
+  }
+}
+
+@media (width >= 1024px) {
+  .stand-for-tabs {
+    padding: 5rem 2.5rem !important;
+  }
+}
+
+@media (width >= 1440px) {
+  .stand-for-tabs .tabs.block {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
