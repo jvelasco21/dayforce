@@ -5,6 +5,28 @@ function hasWrapper(el) {
   return !!el.firstElementChild && window.getComputedStyle(el.firstElementChild).display === 'block';
 }
 
+// window.onscroll = function() {stickyTablist()};
+
+// Creates a "sticky" tablist on vertical scroll
+function stickyTablist() {
+  const mobileTabs = document.querySelector('.mobile-offer-tabs');
+  if (mobileTabs) {
+    const tabsContainer = mobileTabs.querySelector('.tabs-container');
+    const sticky = tabsContainer.offsetTop;
+    window.onscroll = () => {
+      if (window.scrollY > sticky) {
+        tabsContainer.classList.add('sticky');
+      } else {
+        tabsContainer.classList.remove('sticky');
+      }
+    };
+    window.addEventListener('resize', () => {
+      const vh = window.innerHeight * 0.1;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  }
+}
+
 // Create <p> class names to distinguish styling
 function createClassNames(block) {
   if (block.classList.contains('mobile')) {
@@ -17,42 +39,61 @@ function createClassNames(block) {
   }
 }
 
-function createMobileTabNavigation() {
-  const tabsContainer = document.querySelector('.mobile-offer-tabs');
-  if (tabsContainer) {
-    const tablist = tabsContainer.querySelector('.tabs-list');
-    const leftTab = tabsContainer.querySelector('.arrow-left');
-    const rightTab = tabsContainer.querySelector('.arrow-right');
-    const { clientWidth, scrollWidth } = tablist;
-    tablist.addEventListener('scroll', (e) => {
-      const maxScrollWidth = scrollWidth - (clientWidth + e.target.scrollLeft);
-      leftTab.classList.remove('hide');
-      leftTab.classList.toggle('hide', e.target.scrollLeft <= 0);
-      rightTab.classList.toggle('hide', scrollWidth - (clientWidth + e.target.scrollLeft) <= maxScrollWidth + 1);
+// Creates active tab underline transition
+function createTabIndicator() {
+  const mobileTabs = document.querySelector('.mobile-offer-tabs');
+  if (mobileTabs) {
+    const tablist = mobileTabs.querySelector('.tabs-list');
+    const indicator = mobileTabs.querySelector('.tabs-indicator');
+    tablist.addEventListener('click', (event) => {
+      if (event.target.classList.contains('tabs-tab')) {
+        const rect = event.target.getBoundingClientRect();
+        const tabWidth = rect.width;
+        const tabPosition = rect.left - 24;
+        indicator.style.width = `${tabWidth}px`;
+        indicator.style.setProperty('--translate-x', `${tabPosition}px`);
+      }
+    });
+  }
+}
+
+// Creates a tab slider effect when scrolling/clicking on tab navigation
+function createTabSlider() {
+  const mobileTabs = document.querySelector('.mobile-offer-tabs');
+  if (mobileTabs) {
+    const tabSliderWrapper = mobileTabs.querySelector('.tabs-slider-wrapper');
+    const tablistWrapper = mobileTabs.querySelector('.tabs-list-wrapper');
+    const leftTab = mobileTabs.querySelector('.arrow-left');
+    const rightTab = mobileTabs.querySelector('.arrow-right');
+    tabSliderWrapper.addEventListener('scroll', (e) => {
+      leftTab.classList.toggle('hide', e.target.scrollLeft <= 1);
+      rightTab.classList.toggle('hide', tablistWrapper.scrollWidth - (tabSliderWrapper.clientWidth + e.target.scrollLeft) <= 1);
     });
 
     leftTab.addEventListener('click', (e) => {
       e.preventDefault();
-      tablist.scrollLeft -= 150;
+      tabSliderWrapper.scrollLeft -= 150;
     });
 
     rightTab.addEventListener('click', (e) => {
       e.preventDefault();
-      tablist.scrollLeft += 150;
+      tabSliderWrapper.scrollLeft += 150;
     });
   }
 }
 
 // Creates a wrapper to group together tab list and navigation
-async function createMobileWrapper(block, tablist) {
+async function createTablistWrapper(block, tablist) {
   if (block.classList.contains('mobile')) {
     const buttonWrapper = block.closest('.mobile-offer-tabs').querySelector('.default-content-wrapper');
     const tabListWrapper = document.createElement('div');
     const tabIndicator = document.createElement('div');
     const tabSliderWrapper = document.createElement('div');
+    const tabContainer = document.createElement('div');
     tabListWrapper.className = 'tabs-list-wrapper';
     tabIndicator.className = 'tabs-indicator';
     tabSliderWrapper.className = 'tabs-slider-wrapper';
+    tabContainer.className = 'tabs-container';
 
     // Remove default <p> tag from navigation buttons
     const pTag = buttonWrapper.children[0];
@@ -60,14 +101,15 @@ async function createMobileWrapper(block, tablist) {
     aTags[0].className = 'tab-control arrow-left hide';
     aTags[1].className = 'tab-control arrow-right';
     aTags.forEach((item) => {
-      tabSliderWrapper.appendChild(item);
+      tabContainer.appendChild(item);
     });
     pTag.remove();
     buttonWrapper.remove();
     tabListWrapper.appendChild(tablist);
     tabListWrapper.insertBefore(tabIndicator, tabListWrapper.children[0]);
     tabSliderWrapper.appendChild(tabListWrapper);
-    block.insertBefore(tabSliderWrapper, block.children[0]);
+    tabContainer.appendChild(tabSliderWrapper);
+    block.insertBefore(tabContainer, block.children[0]);
   }
 }
 
@@ -132,7 +174,9 @@ export default async function decorate(block) {
 
   block.prepend(tablist);
 
-  createMobileWrapper(block, tablist);
+  createTablistWrapper(block, tablist);
   createClassNames(block);
-  createMobileTabNavigation();
+  createTabSlider();
+  createTabIndicator();
+  stickyTablist();
 }
