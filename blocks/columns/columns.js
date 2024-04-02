@@ -20,7 +20,7 @@ export default function decorate(block) {
         col.classList.add(`utility-column-${i + 1}`);
       }
 
-      // header utlity
+      // header main nav column
       if (col.closest('.main-nav') !== null) {
         col.classList.add('main-nav-column');
         col.classList.add(`main-nav-column-${i + 1}`);
@@ -30,8 +30,15 @@ export default function decorate(block) {
       if (col.closest('.main-nav') !== null && col.closest('.main-nav-column-2')) {
         const ul = col.firstElementChild;
         ul.classList.add('nav-ul');
-        ul.querySelectorAll('li').forEach((item, i) => {
-          item.classList.add(`main-nav-item-${i + 1}`);
+        ul.querySelectorAll('li').forEach((item, index) => {
+          item.classList.add(`main-nav-item-${index + 1}`);
+          item.addEventListener('click', (e) => {
+            if (ul.querySelector('.active') && !item.classList.contains('active')) {
+              ul.querySelector('.active').classList.remove('active');
+            }
+            item.classList.toggle('active');
+            e.preventDefault();
+          });
         });
       }
 
