@@ -30,7 +30,7 @@ export default function decorate(block) {
       if (col.closest('.main-nav') !== null && col.closest('.main-nav-column-2')) {
         const ul = col.firstElementChild;
         ul.classList.add('nav-ul');
-        ul.querySelectorAll('li').forEach((item) => {
+        ul.querySelectorAll('li').forEach((item, i) => {
           item.classList.add(`main-nav-item-${i + 1}`);
         });
       }
