@@ -63,19 +63,19 @@ function createTabSlider() {
   if (mobileTabs) {
     const tabSliderWrapper = mobileTabs.querySelector('.tabs-slider-wrapper');
     const tablistWrapper = mobileTabs.querySelector('.tabs-list-wrapper');
-    const leftTab = mobileTabs.querySelector('.arrow-left');
-    const rightTab = mobileTabs.querySelector('.arrow-right');
+    const leftArrow = mobileTabs.querySelector('.arrow-left');
+    const rightArrow = mobileTabs.querySelector('.arrow-right');
     tabSliderWrapper.addEventListener('scroll', (e) => {
-      leftTab.classList.toggle('hide', e.target.scrollLeft <= 1);
-      rightTab.classList.toggle('hide', tablistWrapper.scrollWidth - (tabSliderWrapper.clientWidth + e.target.scrollLeft) <= 1);
+      leftArrow.classList.toggle('hide', e.target.scrollLeft <= 1);
+      rightArrow.classList.toggle('hide', tablistWrapper.scrollWidth - (tabSliderWrapper.clientWidth + e.target.scrollLeft) <= 1);
     });
 
-    leftTab.addEventListener('click', (e) => {
+    leftArrow.addEventListener('click', (e) => {
       e.preventDefault();
       tabSliderWrapper.scrollLeft -= 150;
     });
 
-    rightTab.addEventListener('click', (e) => {
+    rightArrow.addEventListener('click', (e) => {
       e.preventDefault();
       tabSliderWrapper.scrollLeft += 150;
     });
