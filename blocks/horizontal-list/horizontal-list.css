@@ -1,24 +1,15 @@
+.section > div {
+  max-width: 100%;
+  margin: 0;
+}
+
 .horizontal-list-container {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 1.5rem 0 !important;
   margin: 0 auto;
-  max-width: 80rem;
   width: 100%;
   color: rgb(var(--blue-dark));
   gap: 1.5rem;
-}
-
-@media screen and (width >= 1024px) {
-  .horizontal-list-container {
-    padding: 2.5rem 2.5rem 0 !important;
-  }
-}
-
-@media screen and (width >= 1440px) {
-  .horizontal-list-container {
-    padding: 5rem 5rem 0 !important;
-  }
 }
   
 .horizontal-list-container > div h6 {
@@ -27,31 +18,75 @@
   letter-spacing: 2.8px;
   line-height: 1.15;
   text-align: center;
-  margin: 0;
+  margin: 5rem 0 0;
 }
 
 .horizontal-list-container .horizontal-list-wrapper {
   display: none;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
-@media screen and (width >= 768px) {
-  .horizontal-list-container .horizontal-list-wrapper {
-    display: block;
-  }
+.horizontal-list-container .horizontal-list-wrapper .list-control {
+  width: 5rem;
+  position: absolute;
+  top: 10%;
+  background: linear-gradient(to right, rgb(255 255 255 / 10%), rgb(255 255 255 / 100%));
+  z-index: 20;
+}
+
+.horizontal-list-container .horizontal-list-wrapper .list-control.arrow-left {
+  display: flex;
+  justify-content: flex-end;
+  transform: rotate(180deg);
+}
+
+.horizontal-list-container .horizontal-list-wrapper .list-control.arrow-left .icon, .horizontal-list-container .horizontal-list-wrapper .list-control.arrow-right .icon {
+  margin-right: .5rem;
+}
+
+.horizontal-list-container .horizontal-list-wrapper .list-control.arrow-right {
+  display: flex;
+  justify-content: flex-end;
+  right: 0;
+}
+
+.horizontal-list-container .horizontal-list-wrapper .list-control .icon {
+  background-color: rgb(var(--blue));
+  border-radius: 999rem;
+}
+
+.horizontal-list-container .horizontal-list-wrapper .list-control .icon img {
+  vertical-align: middle;
+}
+
+.horizontal-list-container .horizontal-list-wrapper .list-control.hide {
+  top: 10%;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 300ms;
+  transition-property: opacity, visibility;
+  transition-delay: 300ms;
 }
 
 .horizontal-list-container .horizontal-list.block .content-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 min(-2.5rem, calc( calc(100vw - 0px, 0px) - 1280px)* -1)
+  position: relative;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+.horizontal-list-container .horizontal-list.block .content-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .horizontal-list-container .horizontal-list.block .content-wrapper ul {
   display: flex;
   padding: 0.5rem;
-  margin: auto;
+  margin: 0;
+  width: 100%;
   gap: 3rem;
 }
 
@@ -70,17 +105,12 @@
   color: rgb(var(--blue-medium));
 }
 
+/* ---------- MOBILE ---------- */
 .horizontal-list-container .mobile-content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-@media screen and (width >= 768px) {
-  .horizontal-list-container .mobile-content-wrapper {
-    display: none;
-  }
 }
 
 .horizontal-list-container .mobile-content-wrapper .button-container {
@@ -159,4 +189,14 @@
 
 .horizontal-list-container .mobile-content-wrapper .mobile-dropdown-wrapper ul li a:hover {
   text-decoration: underline;
+}
+
+@media screen and (width >= 768px) {
+  .horizontal-list-container .mobile-content-wrapper {
+    display: none;
+  }
+
+  .horizontal-list-container .horizontal-list-wrapper {
+    display: block;
+  }
 }
