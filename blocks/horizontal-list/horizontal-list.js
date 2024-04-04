@@ -1,3 +1,4 @@
+// Mobile dropdown list
 function animateDropdown(clone, button) {
   clone.classList.toggle('active');
   button.classList.toggle('active');
