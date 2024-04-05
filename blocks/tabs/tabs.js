@@ -5,6 +5,77 @@ function hasWrapper(el) {
   return !!el.firstElementChild && window.getComputedStyle(el.firstElementChild).display === 'block';
 }
 
+// Creates and wraps an anchor tag around each tab button
+function createAnchorEl() {
+  const tabs = document.querySelector('.anchor-tab');
+  const tabList = tabs.querySelector('.tabs-list');
+  if (tabList) {
+    const buttons = tabList.getElementsByClassName('tabs-tab');
+    if (buttons) {
+      for (let i = 0; i < buttons.length; i += 1) {
+        const element = buttons[i];
+        // Grabs last p tag in tab, then anchor tag
+        const link = element.lastElementChild.lastElementChild;
+        const parent = element.parentNode;
+        const wrapper = document.createElement('a');
+        wrapper.setAttribute('href', link);
+        wrapper.setAttribute('target', '_blank');
+        parent.replaceChild(wrapper, element);
+        wrapper.appendChild(element);
+      }
+    }
+  }
+}
+
+// Shows tab details for mouseenter
+function addHoverEvent(tabId, tabsPanel) {
+  if (tabsPanel) {
+    const newTabId = tabId.substring(3);
+    for (let i = 0; i < tabsPanel.length; i += 1) {
+      tabsPanel[i].ariaHidden = true;
+      if (tabsPanel[i].id.endsWith(newTabId)) {
+        tabsPanel[i].ariaHidden = false;
+      }
+    }
+  }
+}
+
+// Hides all tab details on mouseleave, unhides 1st tab details.
+function removeHoverEvent(tabId, tabsPanel) {
+  if (tabsPanel) {
+    const newTabId = tabId.substring(3);
+    for (let i = 0; i < tabsPanel.length; i += 1) {
+      if (tabsPanel[i].id.endsWith(newTabId)) {
+        tabsPanel[i].ariaHidden = true;
+        tabsPanel[0].ariaHidden = false;
+      }
+    }
+  }
+}
+
+// Event listener for tab mouseenter/mouseleave
+function getHoverTabListId() {
+  const tabs = document.querySelector('.hover-tab');
+  const tabsList = tabs.querySelector('.tabs-list');
+  const tabsPanel = tabs.getElementsByClassName('tabs-panel');
+  if (tabsList) {
+    const buttons = tabsList.getElementsByClassName('tabs-tab');
+    for (let i = 0; i < buttons.length; i += 1) {
+      buttons[i].addEventListener('mouseenter', (event) => {
+        if (buttons[i].id === event.target.id) {
+          addHoverEvent(buttons[i].id, tabsPanel);
+        }
+      });
+      buttons[i].addEventListener('mouseleave', (event) => {
+        if (buttons[i].id === event.target.id) {
+          removeHoverEvent(buttons[i].id, tabsPanel);
+        }
+      });
+    }
+  }
+}
+
+// Builds tabList
 export default async function decorate(block) {
   // build tablist
   const tablist = document.createElement('div');
@@ -51,4 +122,7 @@ export default async function decorate(block) {
   });
 
   block.prepend(tablist);
+
+  createAnchorEl();
+  getHoverTabListId();
 }

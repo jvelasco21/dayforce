@@ -1,3 +1,4 @@
+/* ORIGINAL BOILERPLATE START */
 .tabs .tabs-list {
   display: flex;
   gap: 8px;
@@ -45,93 +46,137 @@
   display: none;
 }
 
+/* ORIGINAL BOILERPLATE END */
+
+.stand-for-tabs .tabs.block .tabs-list .tabs-tab p {
+  margin: 0;
+}
+
+.stand-for-tabs .tabs.block .tabs-list .tabs-tab p:first-child {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-sm);
+  line-height: 30px;
+}
+
+.stand-for-tabs .tabs.block .tabs-list .tabs-tab p:has(.icon) {
+  display: flex;
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(var(--link-color));
+  line-height: 27px;
+  padding-top: .75rem;
+  gap: 0.5rem;
+}
+
+.stand-for-tabs > div {
+  margin: 0;
+}
+
+.stand-for-tabs h2 {
+  margin: 0;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.stand-for-tabs .tabs.block .tabs-panel > div picture img {
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 180px;
+  border-bottom-right-radius: 180px;
+  border-bottom-left-radius: 180px;
+}
+
+.stand-for-tabs .tabs.block .tabs-list .tabs-tab p:has(.icon) img {
+  vertical-align: middle;
+}
+
+.stand-for-tabs .tabs.block .tabs-list .tabs-tab:hover p:has(.icon) img {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(11%) saturate(7026%) hue-rotate(195deg) brightness(95%) contrast(102%);
+}
+
 .stand-for-tabs {
-  padding: 5rem !important;
+  padding: 3rem 1.5rem !important;
   margin: 0 auto;
   max-width: 80rem;
   width: 100%;
+  color: rgb(var(--blue-dark));
+}
 
-  > div {
-    margin: 0;
+.stand-for-tabs .tabs.block {
+  display: grid;
+  gap: 2rem;
+}
+
+.stand-for-tabs .tabs.block .tabs-panel {
+  padding: 2rem 1rem;
+}
+
+.stand-for-tabs .tabs.block .tabs-panel > div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.stand-for-tabs .tabs.block .tabs-list {
+  flex-direction: column;
+  padding: 2rem 0;
+  gap: 1rem;
+  width: 100%;
+}
+
+.stand-for-tabs .tabs.block .tabs-list .tabs-tab {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  line-height: 24px;
+  color: rgb(var(--blue-dark));
+  padding: 1.5rem 2rem;
+  border: 1px solid rgb(191 195 195);
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.stand-for-tabs .tabs.block .tabs-list a {
+  text-decoration: none;
+}
+
+.stand-for-tabs .tabs.block .tabs-tab p a {
+  display: none;
+}
+
+.stand-for-tabs .tabs.block .tabs-list .tabs-tab:hover p:has(.icon) {
+  color: rgb(var(--blue-medium));
+}
+
+.stand-for-tabs .tabs.block .tabs-list .tabs-tab:hover {
+  cursor: pointer;
+  background-color: rgb(218 241 252);
+}
+
+@media (width >= 768px) {
+  .stand-for-tabs .tabs.block .tabs-list .tabs-tab p:first-child {
+    font-size: var(--heading-font-size-m);
+    line-height: 36px;
   }
+}
 
-  h2 {
-    margin: 0;
-    line-height: 1.15;
-    font-weight: 700;
+@media (width <= 1023px) {
+  .stand-for-tabs .tabs.block .tabs-panel {
+    display: none;
   }
+}
 
-  .tabs.block {
-    display: grid;
+@media (width >= 1024px) {
+  .stand-for-tabs {
+    padding: 5rem 2.5rem !important;
+  }
+}
+
+@media (width >= 1440px) {
+  .stand-for-tabs .tabs.block {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem;
-
-    .tabs-panel {
-      padding: 2rem 1rem;
-
-      > div {
-        display: flex;
-        width: 100%;
-        height: 100%;
-
-        picture {
-          img {
-            height: 100%;
-            object-fit: cover;
-            border-top-right-radius: 180px;
-            border-bottom-right-radius: 180px;
-            border-bottom-left-radius: 180px;
-          }
-        }
-      }
-    }
-
-    .tabs-list {
-      flex-direction: column;
-      padding: 2rem 0;
-      gap: 1rem;
-      width: 100%;
-
-      .tabs-tab {
-        display: flex;
-        flex-direction: column;
-        background-color: transparent;
-        line-height: 24px;
-        padding: 1.5rem 2rem;
-        border: 1px solid rgb(191 195 195);
-        border-radius: 0.5rem;
-        gap: 0.5rem;
-        width: 100%;
-
-        p {
-          margin: 0;
-        }
-
-        p:first-child {
-          font-family: var(--heading-font-family);
-          font-size: var(--heading-font-size-m);
-          line-height: 36px;
-        }
-
-        p:last-child {
-          display: flex;
-          margin: 0;
-          font-family: var(--heading-font-family);
-          font-size: 18px;
-          font-weight: 700;
-          color: rgb(var(--link-color));
-          line-height: 27px;
-          gap: 0.5rem;
-
-          img {
-            vertical-align: middle;
-          }
-        }
-      }
-
-      .tabs-tab:hover {
-        background-color: rgb(218 241 252);
-      }
-    }
   }
 }

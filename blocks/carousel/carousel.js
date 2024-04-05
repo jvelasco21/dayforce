@@ -147,4 +147,24 @@ export default async function decorate(block) {
   if (!isSingleSlide) {
     bindEvents(block);
   }
+
+  // For marquee carousel, duplicate the slides UL and insert before initial slides UL
+  if (block.classList.contains('marquee')) {
+    const clone = slidesWrapper.cloneNode(true);
+    const slidesWrapperParent = slidesWrapper.closest('.carousel-slides-container');
+    slidesWrapperParent.insertBefore(clone, slidesWrapper);
+  }
+
+  // Creates class names for each <p> tag for mobile carousel
+  if (block.classList.contains('mobile')) {
+    const carouselContent = block.querySelectorAll('.carousel-slide');
+    carouselContent.forEach((content) => {
+      for (let i = 0; i < content.children.length; i += 1) {
+        content.children[i].classList.add(`content-${i}`);
+        for (let j = 0; j < content.children[i].children.length; j += 1) {
+          content.children[i].children[j].classList.add(`row-${j}`);
+        }
+      }
+    });
+  }
 }

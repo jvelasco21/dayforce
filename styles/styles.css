@@ -48,6 +48,7 @@
   /* ---------- fonts ---------- */
   --body-font-family: "Clarika Grotesque Light", ui-sans-serif, system-ui, arial;
   --heading-font-family: "Clarika Geometric DemiBold", ui-sans-serif, system-ui, arial;
+  --tab-selected-font-family: "Clarika Grotesque DemiBold", ui-sans-serif, system-ui, arial;
 
   /* font weight */
   --font-light: 300;
@@ -59,12 +60,12 @@
   --heading-font-size-xl: 40px; /* h2 */
   --heading-font-size-l: 32px; /* h3 */
   --heading-font-size-m: 24px; /* h4 */
-  --heading-font-size-sm: 20px; /* h5 */
+  --heading-font-size-sm: 20px;
   --heading-font-size-s: 18px; /* h5 */
   --heading-font-size-xs: 14px; /* h6 */
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 165px;
 }
 
 @font-face {
@@ -72,6 +73,10 @@
   size-adjust: 100.06%;
   ascent-override: 95%;
   src: local('arial');
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -143,7 +148,7 @@ li {
 /* links */
 a:any-link {
   text-decoration: none;
-  transition-duration: 15s;
+  transition-duration: .15s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
 }
 
@@ -269,4 +274,12 @@ main .section.homepage-hero {
   background-color: rgb(var(--blue));
   min-height: 900px;
   box-sizing: border-box;
+}
+
+/* marquee/brands section */
+main .section.brands-carousel .default-content-wrapper{
+  font-family: var(--heading-font-family);
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
 }

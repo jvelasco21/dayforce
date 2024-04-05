@@ -1,0 +1,188 @@
+.active .mega-menu-wrapper {
+    height: calc(100vh - 300%);
+    opacity: 1;
+}
+
+.mega-menu-wrapper {
+    position: absolute;
+    left: 0;
+    height: 0;
+    transition: height .2s, opacity .3s;
+    overflow: hidden;
+    opacity: 0;
+    width: 100%;
+}
+
+.mega-menu {
+    transition-duration: .3s;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    background-color: rgb(var(--white));
+    border-radius: 0 0 40px 40px;
+    border: 1px solid rgb(var(--white-hover));
+    overflow: hidden;
+    max-height: 100%;
+    display: flex;
+}
+
+.mega-menu > div {
+    display: flex;
+    max-height: 100%;
+    flex: 1 1 0px;
+}
+
+.mega-menu .column {
+    padding: 3.5rem 3rem;
+    flex: 1 1 0px;
+    overflow: auto;
+}
+
+.mega-menu .column-3 {
+    background-color: rgb(241 242 242);
+    overflow: auto;
+}
+
+.mega-menu h3 {
+    font-family: var(--body-font-family);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.mega-menu h4 {
+    font-family: var(--heading-font-family);
+    font-size: 1rem;
+    margin: 0;
+    padding: .25rem 0 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: rgb(8 20 45);
+}
+
+.mega-menu ul {
+    margin: 0;
+    padding: .5rem 0 0;
+    display: flex;
+    gap: .25rem;
+    flex-direction: column;
+}
+
+.mega-menu ul li {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mega-menu ul li strong {
+    font-family: "Clarika Geometric", ui-sans-serif, system-ui, Arial;
+    font-weight: 600;
+}
+
+.dayfoce-header nav#nav .main-nav .mega-menu ul li a {
+    padding: .75rem;
+    gap: .25rem;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Clarika Geometric", ui-sans-serif, system-ui, Arial;
+    font-weight: 400;
+    background-color: transparent;
+    border-radius: .5rem;
+    transition-property: background-color;
+}
+
+.dayfoce-header nav#nav .main-nav .mega-menu ul li a:hover {
+    background-color: rgba(48 103 219 / 10%);
+}
+
+.mega-menu table,
+.mega-menu tbody,
+.mega-menu tr,
+.mega-menu td {
+    display: block;
+    width: 100%;
+}
+
+.mega-menu .column-3 table,
+.mega-menu .column-3 tbody,
+.mega-menu .column-3 tr {
+    height: 100%;
+}
+
+.mega-menu .column-3 td {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: rgb(244 240 255);
+    border-radius: 1rem;
+}
+
+header nav#nav .mega-menu .column-3 td p:last-child {
+    margin-top: auto;
+    display: flex;
+    font-size: 18px;
+    gap: .5rem;
+    align-items: center;
+    font-family: "Clarika Geometric DemiBold", ui-sans-serif, system-ui, Arial;
+    font-weight: 700;
+    color: rgb(var(--blue));
+}
+
+header nav#nav .mega-menu .column-3 td p:last-child .icon {
+    display: block;
+}
+
+header nav#nav .mega-menu .column-3 td p:last-child .icon img {
+    width: 24px;
+    filter: invert(48%) sepia(91%) saturate(5392%) hue-rotate(213deg) brightness(92%) contrast(85%);
+}
+
+.mega-menu .column-3 td p:first-child {
+    text-transform: uppercase;
+    font-family: "Clarika Geometric DemiBold", ui-sans-serif, system-ui, Arial;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.mega-menu .column-3 td h3 {
+    margin: 1rem 0;
+}
+
+.mega-menu .column-3 td p + h3 {
+    margin: 5rem 0 0;
+    font-size: 32px;
+    text-decoration-color: transparent;
+    text-decoration-line: underline;
+    transition-duration: .3s;
+    transition-property: text-decoration;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    font-family: var(--heading-font-family);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.dayfoce-header nav#nav .main-nav .mega-menu .column-3 td a {
+    font-family: inherit;
+    line-height: 1.5;
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    color: rgb(8 20 45);
+    padding: 1.5rem;
+}
+
+.dayfoce-header nav#nav .main-nav .mega-menu .column-3 td a:hover h3 {
+    text-decoration-color: currentcolor;
+}
+
+.dayfoce-header nav#nav .main-nav .mega-menu .column-3 td a:hover p:last-child {
+    color: rgb(var(--blue-dark));
+}
+
+.dayfoce-header nav#nav .main-nav .mega-menu .column-3 td a:hover p:last-child img {
+    filter: invert(7%) sepia(24%) saturate(3073%) hue-rotate(193deg) brightness(97%) contrast(101%);
+}

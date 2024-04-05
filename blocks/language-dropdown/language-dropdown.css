@@ -1,0 +1,104 @@
+.language-dropdown-wrapper {
+    position: absolute;
+    right: 0;
+    margin-top: .5rem;
+    z-index: 5;
+    transform: scale(.9);
+    opacity: 0;
+    transition-duration: .3s;
+    transition-property: transform, opacity, visibility;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transform-origin: top center;
+    visibility: hidden;
+}
+
+.footer-bottom .language-dropdown-wrapper {
+    right: -104px;
+    left: -104px;
+    top: -444px;
+    transform-origin: center center;
+}
+
+.language-dropdown-wrapper.active {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+
+.language-dropdown {
+    background: #fff;
+    box-shadow: rgba(0 0 0 / 0%) 0 0 0 0, rgba(0 0 0 / 0%) 0 0 0 0, rgba(0 0 0 / 6%) 0 4px 8px 0;
+    padding: 1rem 0;
+    border-radius: 0 0 8px 8px;
+}
+
+footer .language-dropdown {
+    background: rgb(var(--blue-dark));
+    border-radius: 8px 8px 0 0;
+}
+
+header nav#nav .nav-sections .language-dropdown ul, footer .language-dropdown ul {
+    flex-direction: column;
+    gap: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: "Clarika Geometric", ui-sans-serif, system-ui, Arial;
+}
+
+footer .language-dropdown ul {
+    font-family: var(--heading-font-family);
+}
+
+.language-dropdown a {
+    position: relative;
+    padding: .5rem 3rem;
+    text-decoration: none;
+    transition: .3s;
+    background-color: transparent;
+}
+
+.language-dropdown a:hover {
+    background-color: rgba(48 103 219 / 10%);
+}
+
+.language-dropdown a .icon {
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-top .language-dropdown a .icon img, .footer-bottom .language-dropdown a .icon img {
+    width: 24px;
+    display: block;
+    opacity: 0;
+}
+
+header nav#nav .header-top .language-dropdown .active a {
+    color: rgb(var(--blue));
+}
+
+footer .footer-bottom .language-dropdown ul li.active {
+    color: rgb(68 189 239);
+}
+
+.header-top .language-dropdown .active a .icon img, .footer-bottom .language-dropdown .active a .icon img {
+    opacity: 1;
+}
+
+@media (width >= 768px) {
+    .footer-bottom .language-dropdown-wrapper {
+        right: -129px;
+        left: -82px;
+        transform: translateX(2.5rem);
+    }
+}
+
+@media (width >= 1024px) {
+    .footer-bottom .language-dropdown-wrapper {
+        right: -65px;
+        left: -142px;
+        transform: translateX(4rem);
+    }
+}
