@@ -270,7 +270,7 @@ main .section.highlight {
 
 /* hero section */
 main .section.homepage-hero {
-  padding: 4rem 5rem;
+  padding: 1.5rem;
   background-color: rgb(var(--blue));
   min-height: 900px;
   box-sizing: border-box;
@@ -282,4 +282,16 @@ main .section.brands-carousel .default-content-wrapper{
   text-align: center;
   font-weight: bold;
   font-size: 18px;
+}
+
+@media (width >= 1024px) {
+  main .section.homepage-hero {
+    padding: 4rem 2.5rem;
+  }
+}
+
+@media (width >= 1440px) {
+  main .section.homepage-hero {
+    padding: 4rem 5rem;
+  }
 }
