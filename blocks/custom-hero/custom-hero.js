@@ -14,7 +14,8 @@ export default function decorate(block) {
     tablist.classList.toggle('active');
   }
 
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
     animateDropdown();
   });
 
@@ -26,4 +27,12 @@ export default function decorate(block) {
       }
     });
   });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle('scrolled', !entry.isIntersecting);
+    });
+  });
+
+  observer.observe(hpHero);
 }

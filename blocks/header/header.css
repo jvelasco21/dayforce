@@ -401,12 +401,14 @@ header .dayfoce-header .header-bottom {
   header .dayfoce-header .header-bottom {
     height: 84px;
     flex-basis: 84px;
-    padding: 8px 0 0;
+    padding: .5rem 1.5rem 0;
     box-sizing: border-box;
   }
 
   .dayfoce-header .header-bottom .columns-wrapper {
     height: 100%;
+    max-width: 80rem;
+    margin: auto;
   }
 
   .dayfoce-header .main-nav {
