@@ -66,6 +66,7 @@
 
   /* nav height */
   --nav-height: 165px;
+  --mobile-nav-height: 105px;
 }
 
 @font-face {
@@ -94,7 +95,13 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  height: var(--mobile-nav-height);
+}
+
+@media (width >= 1024px) {
+  header {
+    height: var(--nav-height);
+  }
 }
 
 h1, h2, h3,

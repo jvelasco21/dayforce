@@ -26,11 +26,18 @@
   font-size: 14px;
 }
 
+.announcements > div > div {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @media (width < 600px) {
   .announcements-container,
   .announcements,
   .announcements > div {
-    height: 5rem;
+    height: 2.5rem;
   }
 }
 
