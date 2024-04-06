@@ -375,7 +375,7 @@ header .dayfoce-header .header-bottom {
     height: 40px;
     box-sizing: border-box;
     flex: unset;
-    padding-top: 1rem;
+    padding: 1rem 1.5rem 0;
     display: block;
   }
 
@@ -451,7 +451,7 @@ header .dayfoce-header .header-bottom {
 
   .dayfoce-header .main-nav .main-nav-column {
     flex: inherit;
-    display: block;
+    display: flex;
   }
 
   .dayfoce-header .main-nav .main-nav-column.main-nav-column-2 {
