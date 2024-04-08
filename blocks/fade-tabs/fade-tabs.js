@@ -43,13 +43,15 @@ function createClassNames(block) {
 function createTabIndicator() {
   const mobileTabs = document.querySelector('.mobile-offer-tabs');
   if (mobileTabs) {
+    const tabSliderWrapper = mobileTabs.querySelector('.tabs-slider-wrapper');
     const tablist = mobileTabs.querySelector('.tabs-list');
     const indicator = mobileTabs.querySelector('.tabs-indicator');
     tablist.addEventListener('click', (event) => {
       if (event.target.classList.contains('tabs-tab')) {
         const rect = event.target.getBoundingClientRect();
         const tabWidth = rect.width;
-        const tabPosition = rect.left - 24;
+        let tabPosition = rect.left - 24;
+        tabPosition += tabSliderWrapper.scrollLeft
         indicator.style.width = `${tabWidth}px`;
         indicator.style.setProperty('--translate-x', `${tabPosition}px`);
       }
