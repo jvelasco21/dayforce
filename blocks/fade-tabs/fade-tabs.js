@@ -51,7 +51,7 @@ function createTabIndicator() {
         const rect = event.target.getBoundingClientRect();
         const tabWidth = rect.width;
         let tabPosition = rect.left - 24;
-        tabPosition += tabSliderWrapper.scrollLeft
+        tabPosition += tabSliderWrapper.scrollLeft;
         indicator.style.width = `${tabWidth}px`;
         indicator.style.setProperty('--translate-x', `${tabPosition}px`);
       }
