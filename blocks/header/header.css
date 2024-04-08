@@ -19,6 +19,25 @@ header nav#nav {
   font-family: var(--body-font-family);
 }
 
+header nav#nav::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0 0 0 / 50%);
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+}
+
+header nav#nav[aria-expanded="true"]::after {
+  opacity: 1;
+  visibility: visible ;
+}
+
+
 header nav#nav[aria-expanded="true"] {
   grid-template:
     "hamburger brand" var(--nav-height)
@@ -525,5 +544,31 @@ header .dayfoce-header .header-bottom {
   .dayfoce-header nav#nav .main-nav .icon-rightarrow img {
     width: 24px;
     filter: invert(98%) sepia(98%) saturate(0%) hue-rotate(317deg) brightness(102%) contrast(103%);
+  }
+}
+
+header nav#nav .header-mobile {
+  background: pink;
+  padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  height: 100vh;
+  z-index: 100;
+  width: 100%;
+  max-width: 336px;
+  border-top-left-radius: 40px;
+  transition: .3s;
+  opacity: 0;
+}
+
+header nav#nav[aria-expanded="true"] .header-mobile {
+  right: 0;
+  opacity: 1;
+}
+
+@media (width >= 1024px) {
+  .header-mobile {
+    display: none;
   }
 }

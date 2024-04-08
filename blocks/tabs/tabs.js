@@ -21,8 +21,8 @@ function createAnchorEl() {
         wrapper.setAttribute('href', link);
         wrapper.setAttribute('target', '_blank');
         wrapper.setAttribute('role', 'tab');
-        element.removeAttribute("role");
-        element.removeAttribute("aria-selected");
+        element.removeAttribute('role');
+        element.removeAttribute('aria-selected');
         parent.replaceChild(wrapper, element);
         wrapper.appendChild(element);
       }
