@@ -547,7 +547,7 @@ header .dayfoce-header .header-bottom {
   }
 }
 
-header nav#nav .header-mobile {
+header nav#nav .mobile-drawer {
   background: pink;
   padding: 1.5rem;
   position: fixed;
@@ -562,13 +562,13 @@ header nav#nav .header-mobile {
   opacity: 0;
 }
 
-header nav#nav[aria-expanded="true"] .header-mobile {
+header nav#nav[aria-expanded="true"] .mobile-drawer {
   right: 0;
   opacity: 1;
 }
 
 @media (width >= 1024px) {
-  .header-mobile {
+  .mobile-drawer {
     display: none;
   }
 }
