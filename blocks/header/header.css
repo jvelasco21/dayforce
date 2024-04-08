@@ -27,14 +27,16 @@ header nav#nav::after {
   height: 100vh;
   background-color: rgba(0 0 0 / 50%);
   z-index: 99;
+  transition: .3s;
   visibility: hidden;
   opacity: 0;
-  transition: .3s;
 }
 
-header nav#nav[aria-expanded="true"]::after {
-  opacity: 1;
-  visibility: visible ;
+@media (width < 1024px) {
+  header nav#nav[aria-expanded="true"]::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 
@@ -126,6 +128,7 @@ header nav#nav[aria-expanded="false"] .nav-hamburger-icon::after {
   top: 6px;
 }
 
+/*
 header nav#nav[aria-expanded="true"] .nav-hamburger-icon {
   height: 22px;
 }
@@ -146,6 +149,7 @@ header nav#nav[aria-expanded="true"] .nav-hamburger-icon::after {
   bottom: 3px;
   transform: rotate(-45deg);
 }
+*/
 
 @media (width >= 1024px) {
   header nav#nav .nav-hamburger {
@@ -548,23 +552,63 @@ header .dayfoce-header .header-bottom {
 }
 
 header nav#nav .mobile-drawer {
-  background: pink;
+  background: #fff;
   padding: 1.5rem;
   position: fixed;
   top: 0;
   right: -100vw;
+  opacity: 0;
   height: 100vh;
   z-index: 100;
   width: 100%;
   max-width: 336px;
   border-top-left-radius: 40px;
   transition: .3s;
-  opacity: 0;
 }
 
 header nav#nav[aria-expanded="true"] .mobile-drawer {
   right: 0;
   opacity: 1;
+}
+
+.mobile-drawer .mobile-header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mobile-drawer .mobile-header > div > div:first-child {
+  margin-right: auto;
+}
+
+.mobile-drawer .mobile-header .button-container {
+  margin-left: .5rem;
+}
+
+.mobile-drawer .mobile-header .button {
+  padding: .25rem;
+  border-radius: 8px;
+  transition-duration: .15s;
+  background-color: transparent;
+  border: 0;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(.4 0 .2 / 10%);
+}
+
+.mobile-drawer .mobile-header .button:hover {
+  background-color: rgba(48 103 219 / 10%);
+}
+
+.mobile-drawer .mobile-header .icon.icon-dayforce {
+  display: block;
+  height: 40px;
+}
+
+.mobile-drawer .mobile-header .button .icon {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 @media (width >= 1024px) {
