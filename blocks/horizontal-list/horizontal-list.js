@@ -14,7 +14,7 @@ function createListSlider(listWrapper, aTags) {
       const observer = new ResizeObserver((entries) => {
         entries.forEach((entry) => {
           const { inlineSize: width } = entry.contentBoxSize[0];
-          if (width < window.screen.width) {
+          if (window.innerWidth > width) {
             aTags[1].classList.add('hide');
           } else {
             aTags[1].classList.remove('hide');
