@@ -95,4 +95,14 @@ export default function decorate(block) {
       }
     });
   });
+
+  const closeIcon = document.querySelector('.mobile-header .icon-close');
+  if (closeIcon) {
+    const closeBtn = closeIcon.closest('.button');
+    const nav = document.getElementById('nav');
+    closeBtn.addEventListener('click', () => {
+      nav.setAttribute('aria-expanded', 'false');
+      document.body.style.overflowY = '';
+    });
+  }
 }
