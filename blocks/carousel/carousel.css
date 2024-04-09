@@ -394,13 +394,20 @@
   height: 100%;
 }
 
-.whats-new-carousel .carousel.mobile .carousel-slides .carousel-slide .carousel-slide-content.content-2 .row-0 {
+.whats-new-carousel .carousel.mobile .carousel-slides .carousel-slide .carousel-slide-content.content-2 .row-0,
+.whats-new-carousel .carousel.mobile .carousel-slides .carousel-slide .carousel-slide-content.content-2 .row-0 .button {
+  font-family: var(--heading-font-family);
   color: rgb(var(--blue));
   font-size: var(--heading-font-size-s);
   transition: .3s color cubic-bezier(.4,0,.2,1);
 }
 
-.whats-new-carousel .carousel.mobile .carousel-slides .carousel-slide:hover .carousel-slide-content.content-2 .row-0 {
+.whats-new-carousel .carousel.mobile .carousel-slides .carousel-slide .carousel-slide-content.content-2 .row-0 .button {
+  padding: 0;
+}
+
+.whats-new-carousel .carousel.mobile .carousel-slides .carousel-slide:hover .carousel-slide-content.content-2 .row-0,
+.whats-new-carousel .carousel.mobile .carousel-slides .carousel-slide:hover .carousel-slide-content.content-2 .row-0 .button {
   color: rgb(var(--blue-medium));
 }
 
