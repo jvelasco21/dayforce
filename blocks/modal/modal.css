@@ -5,6 +5,11 @@ body.modal-open {
 .modal dialog {
   overscroll-behavior: none;
   border: 0;
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  padding: 0;
+  box-shadow: 0 5px 50px rgba(0 0 0 / 5%);
 }
 
 .modal dialog .modal-content {
@@ -13,7 +18,7 @@ body.modal-open {
   max-height: calc(100dvh - 60px);
 }
 
-@media (width >= 600px) {
+@media (width >= 1024px) {
   .modal dialog {
     padding: 0;
     width: 100%;
