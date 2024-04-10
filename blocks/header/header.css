@@ -402,6 +402,11 @@ header .dayfoce-header .header-bottom {
     display: block;
   }
 
+  header .dayfoce-header nav#nav .header-top > .columns-wrapper {
+    max-width: 80rem;
+    margin: auto;
+  }
+
   header .dayfoce-header nav#nav .header-top .button {
     padding: 0;
     border: 0;
