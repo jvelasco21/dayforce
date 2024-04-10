@@ -49,7 +49,7 @@ export default function decorate(block) {
         col.classList.add(`main-nav-column-${i + 1}`);
       }
 
-      // header mian nav
+      // header main nav
       if (col.closest('.main-nav') !== null && col.closest('.main-nav-column-2')) {
         const ul = col.firstElementChild;
         ul.classList.add('nav-ul');
@@ -63,6 +63,18 @@ export default function decorate(block) {
             e.preventDefault();
           });
         });
+      }
+
+      // header mobile
+      if (col.closest('.mobile-footer') !== null) {
+        col.classList.add('mobile-footer-column');
+        col.classList.add(`mobile-footer-column-${i + 1}`);
+      }
+
+      // nav mobile
+      if (col.closest('.mobile-nav') !== null) {
+        col.classList.add('mobile-nav-column');
+        col.classList.add(`mobile-nav-column-${i + 1}`);
       }
 
       // footer columns
@@ -100,9 +112,13 @@ export default function decorate(block) {
   if (closeIcon) {
     const closeBtn = closeIcon.closest('.button');
     const nav = document.getElementById('nav');
+    const mobileNav = document.querySelectorAll(':scope .mobile-nav-column-1 > ul li');
     closeBtn.addEventListener('click', () => {
       nav.setAttribute('aria-expanded', 'false');
       document.body.style.overflowY = '';
+      mobileNav.forEach((item) => {
+        item.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 }
