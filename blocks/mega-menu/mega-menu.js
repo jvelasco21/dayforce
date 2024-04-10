@@ -51,4 +51,22 @@ export default function decorate(block) {
     const menu2 = block.closest('.mega-menu-wrapper');
     menuItem2.append(menu2);
   }
+
+  if (block.classList.contains('menu-3')) {
+    const menuItem3 = block.closest('.header-bottom').querySelector('.main-nav-item-3');
+    const menu3 = block.closest('.mega-menu-wrapper');
+    menuItem3.append(menu3);
+  }
+
+  if (block.classList.contains('menu-4')) {
+    const menuItem4 = block.closest('.header-bottom').querySelector('.main-nav-item-4');
+    const menu4 = block.closest('.mega-menu-wrapper');
+    menuItem4.append(menu4);
+  }
+
+  if (block.classList.contains('menu-5')) {
+    const menuItem5 = block.closest('.header-bottom').querySelector('.main-nav-item-5');
+    const menu5 = block.closest('.mega-menu-wrapper');
+    menuItem5.append(menu5);
+  }
 }
